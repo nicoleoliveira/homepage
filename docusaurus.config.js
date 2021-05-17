@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
@@ -14,19 +14,25 @@ module.exports = {
       title: 'Animalia DS',
       logo: {
         alt: 'Animalia DS Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'home',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Documentação',
+        },
+        {
+          type: 'doc',
+          docId: 'components/components',
+          position: 'left',
+          label: 'Componentes',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          href: 'https://github.com/animaliads',
+          label: 'GitHub do Animalia DS',
           position: 'right',
         },
       ],

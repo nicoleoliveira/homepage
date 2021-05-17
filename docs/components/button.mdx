@@ -1,0 +1,194 @@
+---
+id: components
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import button_anatomy from './img/button-anatomy.svg';
+import button_states from './img/button-states.jpg';
+
+# Button
+
+<Tabs
+  defaultValue="design"
+  values={[
+    {label: 'Design', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Propriedades Customizaveis', value: 'custom-properies'},
+  ]}>
+
+  <TabItem value="design">
+
+## Visão geral
+
+Os botões são utilizados para realizar ações e para tomada de decisões. Podem ser utilizado em páginas e também dentro de outros componentes.
+
+### Boas práticas
+
+- Use labels (rótulos) diretos, curtos e intuitivos, que direcionem o usuário para o que será realizado. Para isso, prefira utilizar verbos, por exemplo: "Salvar" e "Adicionar";
+- A interação de foco deve compor os botões, sendo navegação por mouse ou teclado, e em sequência lógica;
+- Evite utilizar muitos botões em uma única tela, pois isso aumenta a carga cognitiva do usuário e vai aumentar seu tempo de decisão;
+- Não use cores para label e backgroud com baixo contraste entre elas, pois isso dificulta o entendimento do conteúdo do botão.
+
+### Anatomia
+
+O botão é composto por um background que recebe uma cor de marca e uma label que descreve a interação que será realizada.
+
+<img
+  src={button_anatomy}
+  alt="Anatomia do botão, sendo 1 o label  e 2 o background"
+/>
+
+**1.** Label
+
+**2.** Background
+
+### Estados do botão
+
+O botão possui estados e se modifica de acordo com a interação do usuário. São eles:
+
+Default, Hover, Focus, Disabled e Focusable Disabled.
+
+<img
+  src={button_states}
+  alt="Os cinco estados do botão primário dispostos lado a lado"
+/>
+
+## Acessibilidade
+
+O componente botão foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.1, mas alterações feitas na aplicação deste podem afetar essa conformidade.
+
+Por isso, é muito importante que, ao aplicar esse componente, o proprietário do conteúdo leve em consideração os seguintes critérios:
+
+**Operável**
+
+- O botão deve sempre ter um rótulo que descreva precisamente a ação que o mesmo executa. [2.4.6: Headings and Labels](https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels)
+- O nome acessível do botão deve conter o rótulo visível do mesmo. Em caso de descrição adicional, o rótulo deverá ser lido primeiro. [2.5.3: Label in Name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name)
+- O estado de foco deve ser sempre preservado, inclusive quando o botão estiver desabilitado. [2.4.7: Focus Visible](https://www.w3.org/WAI/WCAG21/Understanding/focus-visible)
+- Após a ativação do botão o foco deve ser movido dependendo do tipo de ação que o botão executa. Consultar lista de exemplos em [W3C WAI-ARIA 3.5 Button](https://www.w3.org/TR/wai-aria-practices-1.1/#button)
+
+**Perceptível**
+
+- Entre as cores do rótulo do botão e seu background o contraste deve ser de no mínimo 7:1, para botões ativos. [1.4.6: Contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html)
+
+### Diretrizes tratadas no componente
+
+Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas pelo proprietário do conteúdo. São elas:
+
+- Quando em foco, o botão é ativado usando as teclas de _Espaço_ e _Enter_ do teclado. [W3C WAI-ARIA 3.5 Button - Keyboard Interaction](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard-interaction-3)
+
+</TabItem>
+
+<TabItem value="dev">
+
+## Desenvolvimento
+
+### Instalação
+
+Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
+
+```
+npm install @animaliads/ani-button
+```
+
+Ou instalar a biblioteca inteira de componentes:
+
+```
+npm install @animaliads/web-components
+```
+
+### Como utilizar
+
+Para utilizar o web component na sua aplicação você precisa importar o arquivo principal:
+
+```html title="html"
+<script src="./node_modules/@animaliads/ani-button"></script>
+```
+
+Mas caso você estiver utilizando algum framework, pode ser necessário seguir a documentação do próprio
+componente para adicionar o web component. Ou apenas importar o arquivo do componente
+em um arquivo JS, por exemplo:
+
+```javascript title="javascript"
+import '@animaliads/ani-button';
+```
+
+Depois dessa configuração, basta adicionar a tag `ani-button` no seu código:
+
+```html title="html"
+<ani-button>Hello world!</ani-button>
+```
+
+Para customizar o tema do componente, você pode estar utilizando as propriedades customizáveis
+da seguinte forma:
+
+```css title="css"
+ani-button {
+  --background: red;
+  --line-height: 100%;
+  --border-radius: 3px;
+}
+```
+
+Para saber quais são as propriedades disponível, consulte [propriedades customizáveis do botão](#propriedades-customizáveis).
+
+### Live Demo
+
+<iframe
+  src="https://codesandbox.io/embed/ani-button-ofjep?fontsize=14&hidenavigation=1&theme=dark"
+  style={{
+    width: '90%',
+    height: '500px',
+    border: 'solid 1px black',
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ani-button"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Para saber a lista de propriedades e eventos, acesse o [guia de referencia de API](/docs/api-button--sample).
+
+Link úteis:
+
+- [Angular elements](https://angular.io/guide/elements)
+- [Usando Web Components no React](https://pt-br.reactjs.org/docs/web-components.html)
+
+</TabItem>
+
+  <TabItem value="custom-properies">
+
+## Propriedades customizáveis
+
+O botão possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
+
+### Button
+
+| Propriedade        | Contexto   |
+| ------------------ | ---------- |
+| `--font-family`    | Label      |
+| `--text-color`     | Label      |
+| `--font-size`      | Label      |
+| `--line-height`    | Label      |
+| `--background`     | Background |
+| `--border-radius`  | Background |
+| `--spacing-squish` | Background |
+| `--shadow`         | Background |
+
+### Propriedades customizáveis em cada estado
+
+| Estado             | Propriedade                | Contexto   |
+| ------------------ | -------------------------- | ---------- |
+| hover              | `--background-hover`       | Background |
+| focus              | `--outline-color-focused`  | Outline    |
+| pressed            | `--background-pressed`     | Background |
+| pressed            | `--outline-color-pressed`  | Outline    |
+| disabled           | `--background-disabled`    | Background |
+| disabled           | `--text-color-disabled`    | Label      |
+| focusable disabled | `--outline-color-disabled` | Outline    |
+
+</TabItem>
+</Tabs>

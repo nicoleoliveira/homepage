@@ -6,6 +6,10 @@
  */
 
 /* You can override the default Infima variables here. */
+
+@import '@animaliads/css-tokens/global-tokens.css';
+@import '@animaliads/po-ui-brand/theme.css';
+
 :root {
   --ifm-color-primary: #4545A1;
   --ifm-color-primary-dark: #1F1F7A;

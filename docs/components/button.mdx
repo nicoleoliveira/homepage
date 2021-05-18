@@ -6,13 +6,14 @@ sidebar_label: Button
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import button_anatomy from './img/button-anatomy.svg';
+import ButtonAnatomy from './img/button-anatomy.svg';
 import button_states from './img/button-states.jpg';
 
 # Button
 
 <Tabs
   defaultValue="design"
+  lazy
   values={[
     {label: 'Design', value: 'design'},
     {label: 'Desenvolvimento', value: 'dev'},
@@ -36,10 +37,7 @@ Os botões são utilizados para realizar ações e para tomada de decisões. Pod
 
 O botão é composto por um background que recebe uma cor de marca e uma label que descreve a interação que será realizada.
 
-<img
-  src={button_anatomy}
-  alt="Anatomia do botão, sendo 1 o label  e 2 o background"
-/>
+<ButtonAnatomy />
 
 **1.** Label
 
@@ -51,10 +49,7 @@ O botão possui estados e se modifica de acordo com a interação do usuário. S
 
 Default, Hover, Focus, Disabled e Focusable Disabled.
 
-<img
-  src={button_states}
-  alt="Os cinco estados do botão primário dispostos lado a lado"
-/>
+<img src={button_states} alt="Os cinco estados do botão primário dispostos lado a lado" />
 
 ## Acessibilidade
 

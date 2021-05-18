@@ -35,6 +35,21 @@ module.exports = {
           label: 'GitHub',
           position: 'right',
         },
+        {
+          label: 'Community',
+          position: 'left', // or 'right'
+          items: [
+            {
+              label: 'Facebook',
+              href: '...',
+            },
+            {
+              label: 'GitHub',
+              href: '...',
+            },
+            // ... more items
+          ],
+        },
       ],
     },
     footer: {

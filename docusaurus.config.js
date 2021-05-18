@@ -25,14 +25,14 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'components/components',
+          docId: 'components/button',
           position: 'left',
           label: 'Componentes',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/animaliads',
-          label: 'GitHub do Animalia DS',
+          label: 'GitHub',
           position: 'right',
         },
       ],

@@ -1,4 +1,5 @@
 ---
+id: getting-started
 sidebar_position: 3
 ---
 

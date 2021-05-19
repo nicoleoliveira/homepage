@@ -28,3 +28,9 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+
+html[data-theme='dark'] {
+  --ifm-color-primary: #8DC897;
+  --ifm-color-primary-dark: #50955C;
+  /* any other colors you wish to overwrite */
+}

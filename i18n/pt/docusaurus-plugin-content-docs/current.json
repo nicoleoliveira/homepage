@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.documentation.category.Guia de Estilo": {
+    "message": "Guia de Estilo",
+    "description": "The label for category Guia de Estilo in sidebar documentation"
+  }
+}

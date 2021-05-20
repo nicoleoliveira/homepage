@@ -5,6 +5,20 @@ module.exports = {
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'pt'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+      pt: {
+        label: 'Português',
+        direction: 'ltr',
+      }
+    }
+  },
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   organizationName: 'facebook', // Usually your GitHub org/user name.
@@ -21,13 +35,13 @@ module.exports = {
           type: 'doc',
           docId: 'home',
           position: 'left',
-          label: 'Documentação',
+          label: 'Documentation',
         },
         {
           type: 'doc',
           docId: 'components/button',
           position: 'left',
-          label: 'Componentes',
+          label: 'Components',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
@@ -36,8 +50,12 @@ module.exports = {
           position: 'right',
         },
         {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
           label: 'Community',
-          position: 'left', // or 'right'
+          position: 'right', // or 'right'
           items: [
             {
               label: 'Facebook',

@@ -3,7 +3,7 @@ id: getting-started
 sidebar_position: 3
 ---
 
-# Começando
+# Getting started
 
 Este guia tem finalidade de orientar sobre a instalação e utilização dos componentes.
 

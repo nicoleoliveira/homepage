@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'pt',
     locales: ['en', 'pt'],
     localeConfigs: {
       en: {

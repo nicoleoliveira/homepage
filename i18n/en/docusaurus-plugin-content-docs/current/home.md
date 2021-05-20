@@ -10,7 +10,7 @@ sidebar_position: 1
   alt="Ilustração de um grupo de animais sendo uma onça ao centro com 3 outros animais em suas costas"
 /> -->
 
-## O que é o Animalia DS?
+## What is Animalia DS?
 
 O **Animalia DS** – ou _Animalia Design System_ – é o design system _open source_ da TOTVS, que nasceu com o objetivo de melhorar a performance no desenvolvimento de aplicações corporativas, facilitando a comunicação entre designers e desenvolvedores, com uma documentação prática de componentes que garanta uma melhor usabilidade para os clientes.
 

@@ -3,7 +3,7 @@ id: design-principles
 sidebar_position: 2
 ---
 
-# Princípios do Animalia
+# Design Principles of Animalia
 
 Os princípios são nossa direção, são eles que orientam todas as diretrizes e decisões em relação ao design system e a tudo que ele entrega. Os princípios do **Animalia DS** são:
 

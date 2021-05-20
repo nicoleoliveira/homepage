@@ -3,8 +3,8 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.documentation.category.Guia de Estilo": {
+  "sidebar.documentation.category.Guia de estilo": {
     "message": "Style Guide",
-    "description": "The label for category Guia de Estilo in sidebar documentation"
+    "description": "The label for category Guia de estilo in sidebar documentation"
   }
 }

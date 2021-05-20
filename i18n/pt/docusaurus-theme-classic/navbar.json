@@ -3,13 +3,13 @@
     "message": "Animalia DS",
     "description": "The title in the navbar"
   },
-  "item.label.Documentação": {
+  "item.label.Documentation": {
     "message": "Documentação",
-    "description": "Navbar item with label Documentação"
+    "description": "Navbar item with label Documentation"
   },
-  "item.label.Componentes": {
+  "item.label.Components": {
     "message": "Componentes",
-    "description": "Navbar item with label Componentes"
+    "description": "Navbar item with label Components"
   },
   "item.label.Blog": {
     "message": "Blog",
@@ -26,13 +26,5 @@
   "item.label.Facebook": {
     "message": "Facebook",
     "description": "Navbar item with label Facebook"
-  },
-  "item.label.Documentation": {
-    "message": "Documentação",
-    "description": "Navbar item with label Documentation"
-  },
-  "item.label.Components": {
-    "message": "Componentes",
-    "description": "Navbar item with label Components"
   }
 }

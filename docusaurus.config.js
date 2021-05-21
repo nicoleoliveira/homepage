@@ -22,7 +22,7 @@ module.exports = {
   organizationName: 'nicoleoliveira', // Usually your GitHub org/user name.
   projectName: 'homepage', // Usually your repo name.
   url: 'https://nicoleoliveira.github.io.',
-  baseUrl: '/homepage/',
+  baseUrl: '/',
   themeConfig: {
     navbar: {
       title: 'Animalia DS',

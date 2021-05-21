@@ -4,11 +4,11 @@
     "description": "The title in the navbar"
   },
   "item.label.Documentation": {
-    "message": "Documentação",
+    "message": "Documentation",
     "description": "Navbar item with label Documentation"
   },
   "item.label.Components": {
-    "message": "Componentes",
+    "message": "Components",
     "description": "Navbar item with label Components"
   },
   "item.label.Blog": {
@@ -20,7 +20,7 @@
     "description": "Navbar item with label GitHub"
   },
   "item.label.Community": {
-    "message": "Comunidade",
+    "message": "Community",
     "description": "Navbar item with label Community"
   },
   "item.label.Facebook": {

@@ -4,7 +4,7 @@ module.exports = {
   tagline: 'Dinosaurs are cool',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'log',
   i18n: {
     defaultLocale: 'pt',
     locales: ['en', 'pt'],
@@ -33,7 +33,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          docId: 'home',
+          docId: 'intro',
           position: 'left',
           label: 'Documentation',
         },

@@ -4,7 +4,7 @@
     "description": "The label for version current"
   },
   "sidebar.documentation.category.Guia de estilo": {
-    "message": "Style Guide",
+    "message": "Guia de estilo",
     "description": "The label for category Guia de estilo in sidebar documentation"
   }
 }

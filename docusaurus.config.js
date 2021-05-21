@@ -3,7 +3,7 @@ module.exports = {
   title: 'Animalia DS',
   tagline: 'Dinosaurs are cool',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/homepage/',
   onBrokenLinks: 'log',
   i18n: {
     defaultLocale: 'pt',

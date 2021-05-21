@@ -2,8 +2,6 @@
 module.exports = {
   title: 'Animalia DS',
   tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/homepage/',
   onBrokenLinks: 'log',
   i18n: {
     defaultLocale: 'pt',
@@ -24,7 +22,7 @@ module.exports = {
   organizationName: 'nicoleoliveira', // Usually your GitHub org/user name.
   projectName: 'homepage', // Usually your repo name.
   url: 'https://nicoleoliveira.github.io.',
-  baseUrl: '/',
+  baseUrl: '/homepage/',
   themeConfig: {
     navbar: {
       title: 'Animalia DS',

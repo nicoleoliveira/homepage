@@ -21,8 +21,10 @@ module.exports = {
   },
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'nicoleoliveira', // Usually your GitHub org/user name.
+  projectName: 'homepage', // Usually your repo name.
+  url: 'https://nicoleoliveira.github.io.',
+  baseUrl: '/',
   themeConfig: {
     navbar: {
       title: 'Animalia DS',

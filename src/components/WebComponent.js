@@ -7,8 +7,8 @@ import React from 'react';
 
 export default class WebComponentReact extends React.Component {
     render() {
+        return <div>Olá !</div>;
         // return <div>Olá <ani-button>button</ani-button>!</div>;
-        return <div>Olá!</div>;
     }
 }
 
@@ -23,4 +23,3 @@ export default class WebComponentReact extends React.Component {
 //       </BrowserOnly>
 //     );
 //   };
-  

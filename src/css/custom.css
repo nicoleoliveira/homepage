@@ -32,7 +32,7 @@
 }
 
 html[data-theme='dark'] {
-  --ifm-color-primary: #8DC897;
-  --ifm-color-primary-dark: #50955C;
+  --ifm-color-primary: var(--ifm-color-primary-light);
+  --ifm-color-primary-dark: var(--ifm-color-primary-lighter);
   /* any other colors you wish to overwrite */
 }

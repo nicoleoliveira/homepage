@@ -23,7 +23,7 @@ module.exports = {
     },
     'changelog'
   ],
-  components: ['components/button', 'components/link'],
+  components: ['components/button','components/link','components/checkbox'],
   // But you can create a sidebar manually
   /*
   tutorialSidebar: [

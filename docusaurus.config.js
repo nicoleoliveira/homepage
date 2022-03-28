@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Animalia DS',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Design System da TOTVS',
   onBrokenLinks: 'log',
   i18n: {
     defaultLocale: 'pt',
@@ -19,9 +19,9 @@ module.exports = {
   },
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'nicoleoliveira', // Usually your GitHub org/user name.
+  organizationName: 'ajtot', // Usually your GitHub org/user name.
   projectName: 'homepage', // Usually your repo name.
-  url: 'https://nicoleoliveira.github.io.',
+  url: 'https://ajtot.github.io.',
   baseUrl: '/',
   themeConfig: {
     navbar: {
@@ -31,6 +31,12 @@ module.exports = {
         src: 'img/logo.png',
       },
       items: [
+        {
+          type: 'doc',
+          docId: 'foundation/intro',
+          position: 'left',
+          label: 'Foundation',
+        },
         {
           type: 'doc',
           docId: 'intro',
@@ -43,6 +49,7 @@ module.exports = {
           position: 'left',
           label: 'Components',
         },
+     
         {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/animaliads',

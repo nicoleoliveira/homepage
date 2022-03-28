@@ -1,0 +1,163 @@
+---
+id: checkbox
+sidebar_label: CheckBox
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+import CheckboxAnatomy from './img/checkbox-anatomy.jpg';
+
+import WebComponentReact from './../../src/components/WebComponent.js';
+
+
+# Checkbox
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Design', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Propriedades Customizaveis', value: 'custom-properies'},
+  ]}>
+
+  <TabItem value="design">
+
+## Visão geral
+
+O componente checkbox (caixa de seleção) é usado para permitir que o usuário selecione uma ou mais opções de um número limitado de escolhas.
+
+As caixas de seleção atuam de forma independente, ou seja, a escolha de uma opção não afeta as outras caixas e seus status.
+
+
+### Anatomia
+
+O botão é composto por um background que recebe uma cor de marca e uma label que descreve a interação que será realizada.
+
+<img src={CheckboxAnatomy} alt="Os cinco estados do botão primário dispostos lado a lado" />
+**1.** Label
+
+**2.** Background
+
+### Estados do botão
+
+O botão possui estados e se modifica de acordo com a interação do usuário. São eles:
+
+Default, Hover, Focus, Disabled e Focusable Disabled.
+
+
+</TabItem>
+
+<TabItem value="dev">
+
+## Desenvolvimento
+
+### Instalação
+
+Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
+
+```
+npm install @animaliads/ani-button
+```
+
+Ou instalar a biblioteca inteira de componentes:
+
+```
+npm install @animaliads/web-components
+```
+
+### Como utilizar
+
+Para utilizar o web component na sua aplicação você precisa importar o arquivo principal:
+
+```html title="html"
+<script src="./node_modules/@animaliads/ani-button"></script>
+```
+
+Mas caso você estiver utilizando algum framework, pode ser necessário seguir a documentação do próprio
+componente para adicionar o web component. Ou apenas importar o arquivo do componente
+em um arquivo JS, por exemplo:
+
+```javascript title="javascript"
+import '@animaliads/ani-button';
+```
+
+Depois dessa configuração, basta adicionar a tag `ani-button` no seu código:
+
+```html title="html"
+<ani-button>Hello world!</ani-button>
+```
+
+Para customizar o tema do componente, você pode estar utilizando as propriedades customizáveis
+da seguinte forma:
+
+```css title="css"
+ani-button {
+  --background: red;
+  --line-height: 100%;
+  --border-radius: 3px;
+}
+```
+
+Para saber quais são as propriedades disponível, consulte [propriedades customizáveis do botão](#propriedades-customizáveis).
+
+### Live Demo
+
+<iframe
+  src="https://codesandbox.io/embed/ani-button-ofjep?fontsize=14&hidenavigation=1&theme=dark"
+  style={{
+    width: '90%',
+    height: '500px',
+    border: 'solid 1px black',
+    borderRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="ani-button"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+Para saber a lista de propriedades e eventos, acesse o [guia de referencia de API](/docs/api-button--sample).
+
+Link úteis:
+
+- [Angular elements](https://angular.io/guide/elements)
+- [Usando Web Components no React](https://pt-br.reactjs.org/docs/web-components.html)
+
+</TabItem>
+
+  <TabItem value="custom-properies">
+
+## Propriedades customizáveis
+
+O botão possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
+
+### Button
+
+| Propriedade        | Contexto   |
+| ------------------ | ---------- |
+| `--font-family`    | Label      |
+| `--text-color`     | Label      |
+| `--font-size`      | Label      |
+| `--line-height`    | Label      |
+| `--background`     | Background |
+| `--border-radius`  | Background |
+| `--spacing-squish` | Background |
+| `--shadow`         | Background |
+
+### Propriedades customizáveis em cada estado
+
+| Estado             | Propriedade                | Contexto   |
+| ------------------ | -------------------------- | ---------- |
+| hover              | `--background-hover`       | Background |
+| focus              | `--outline-color-focused`  | Outline    |
+| pressed            | `--background-pressed`     | Background |
+| pressed            | `--outline-color-pressed`  | Outline    |
+| disabled           | `--background-disabled`    | Background |
+| disabled           | `--text-color-disabled`    | Label      |
+| focusable disabled | `--outline-color-disabled` | Outline    |
+
+</TabItem>
+</Tabs>

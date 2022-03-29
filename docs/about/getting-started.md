@@ -3,7 +3,7 @@ id: getting-started
 sidebar_position: 3
 ---
 
-# Começando
+# Desenvolvimento
 
 Este guia tem finalidade de orientar sobre a instalação e utilização dos componentes.
 

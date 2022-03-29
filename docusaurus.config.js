@@ -50,7 +50,7 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'designtokens',
           position: 'right',
           label: 'Design Tokens',
         },

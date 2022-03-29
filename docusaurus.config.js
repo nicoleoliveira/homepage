@@ -25,57 +25,43 @@ module.exports = {
   baseUrl: '/',
   themeConfig: {
     navbar: {
-      title: 'Animalia DS',
       logo: {
         alt: 'Animalia DS Logo',
-        src: 'img/logo.png',
+        src: 'img/logo.svg',
       },
       items: [
         {
           type: 'doc',
           docId: 'foundation/intro',
-          position: 'left',
-          label: 'Foundation',
-        },
-        {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Documentation',
+          position: 'right',
+          label: 'Sobre',
         },
         {
           type: 'doc',
           docId: 'components/button',
-          position: 'left',
-          label: 'Components',
+          position: 'right',
+          label: 'Componentes',
         },
+        {
+          type: 'doc',
+          docId: 'foundation/intro',
+          position: 'right',
+          label: 'Fundamentos',
+        },
+        {
+          type: 'doc',
+          docId: 'intro',
+          position: 'right',
+          label: 'Design Tokens',
+        },
+   
+      
+       
      
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/animaliads',
-          label: 'GitHub',
-          position: 'right',
-        },
-        {
-          type: 'localeDropdown',
-          position: 'right',
-        },
-        {
-          label: 'Community',
-          position: 'right', // or 'right'
-          items: [
-            {
-              label: 'Facebook',
-              href: '...',
-            },
-            {
-              label: 'GitHub',
-              href: '...',
-            },
+        //{to: '/blog', label: 'Blog', position: 'left'},
+        
             // ... more items
           ],
-        },
-      ],
     },
     footer: {
       style: 'dark',

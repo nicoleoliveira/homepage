@@ -6,27 +6,21 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 
-import Translate from '@docusaurus/Translate';
-
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">
-        <Translate
-          id="homepage.title"
-          description="The homepage welcome message">
-          Welcome to my website
-        </Translate>
-        </h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/getting-started">
-            Começando
-          </Link>
+        <div className="intro">
+        <h1>Animalia Design System</h1>
+          <p>Design system open source da TOTVS, que nasceu com o objetivo de melhorar a performance no desenvolvimento de aplicações corporativas, facilitando a comunicação entre designers e desenvolvedores</p>
+           <div className={styles.buttons}>
+            <Link
+              className="ani-button-primary"
+             to="/docs/getting-started">
+             Começando
+            </Link>
+          </div>
         </div>
       </div>
     </header>

@@ -4,11 +4,26 @@ id: changelog
 
 # Changelog
 
+## Versão 1.0.0 - (Calango)
+
+28 de junho de 2021
+
+#### 🎉 Novidades (New Features)
+
+- **[Link](https://animaliads.io/?path=/docs/componentes-link--visao-geral):** novo componente para rotas.
+- **[Button](https://animaliads.io/?path=/docs/componentes-button--visao-geral):** novo componente com os tipos: primary, secondary, tertiary e danger. Novos tamanhos de botão: small, medium e large.
+- **[Brand tokens (Animalia)](https://github.com/animaliads/animalia-brand):** novos tokens - Font family, Brand colors, Action colors e Neutral colors.
+
+#### ✨ Melhorias (Enhancements)
+
+- **Global tokens:** ampliação da escala de tokens para line height e spacing squish.
+
+
 ## Versão 1.0.0-next.1 - Calango
 
 28 de abril de 2021
 
-### 🎉 Novidades (New Features)
+#### 🎉 Novidades (New Features)
 
 - **Global tokens:** Definição e disponibilização dos global tokens (Font size, Font weight, Line-height, Letter spacing, Feedback colors, Border width, Border radius, Shadow, Spacing squish)
 - **Documentação (Cores)**: Visão geral sobre a estrutura das cores, boas práticas e design tokens (global tokens)
@@ -16,7 +31,8 @@ id: changelog
 - **Documentação (Button)**: Visão geral sobre o componente, com boas práticas, anatomia e estados, listagem das propriedades e acessibilidade
 - [Repositório de design](https://github.com/animaliads/animalia-design) para versionamento dos arquivos Sketch, no Github
 - **Button**: novo componente. Botão do tipo primário.
-  <br/>
+
+
 
 :::note
 

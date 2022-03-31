@@ -9,13 +9,13 @@ import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
 
-import checkboxSize from './img/checkbox/checkbox-size.jpg';
-import Do1 from './img/checkbox/checkbox-do-1.jpg';
-import Do2 from './img/checkbox/checkbox-do-2.jpg';
-import Dont1 from './img/checkbox/checkbox-dont-1.jpg';
-import Dont2 from './img/checkbox/checkbox-dont-2.jpg';
-import types from './img/checkbox/checkbox-types.jpg';
-import checkboxAnatomy from './img/checkbox/checkboxanatomy.jpg';
+import cardAnatomy from './img/card/card-anatomy-1.jpg';
+import cardTypes from './img/card/card-types.jpg';
+import cardStates from './img/card/card-states.jpg';
+import cardDo1 from './img/card/card-do-1.jpg';
+import cardDo2 from './img/card/card-do-2.jpg';
+import cardDont1 from './img/card/card-dont-1.jpg';
+import cardDont2 from './img/card/card-dont-2.jpg';
 
 
 import WebComponentReact from './../../src/components/WebComponent.js';
@@ -36,15 +36,32 @@ import WebComponentReact from './../../src/components/WebComponent.js';
 
 ## Visão geral
 
-O componente checkbox (caixa de seleção) é usado para permitir que o usuário selecione uma ou mais opções de um número limitado de escolhas.
-As caixas de seleção atuam de forma independente, ou seja, a escolha de uma opção não afeta as outras caixas e seus status.
+O card é um recipiente (*container*) flexível que tem como objetivo agrupar informações e ações sobre um mesmo assunto.
+
+Pode ter diversos tipos de conteúdo, como título, textos, botões, imagem, entre outros.
+
+### Tipos
+
+O componente prevê duas variações:
+
+- **Read-only**
+Quando o card é apenas um “agrupador” das informações. Pode conter elementos interativos dentro dele, como por exemplo um link ou botão, mas não há nenhum tipo de interação no card propriamente dito.
+- **Interactive**
+Quando o card em si é o elemento interativo, podendo assumir as características de:
+   * Link: direciona a pessoa para outra página;
+   * Selectable: o card pode ser selecionado, em um conjunto de cards, por exemplo
+
+<img
+  src={cardTypes}
+  alt="Tipos de cards lado a lado: read only, interactive e interactive selected"
+/>
 
 ### Anatomia
 
-O checkbox é composto por _background_ e _border_. Também contém partes que são específicas de variação do componente ou estados de interação, como _shadow_ no estado hover.
+O card é composto basicamente por _border_ e _background_. Porém, sua variação **interactive** possui também _shadow_ e _outline_.
 
 <img
-  src={checkboxAnatomy}
+  src={cardAnatomy}
   alt="Anatomia do checkbox disposto lado a lado, sendo 1 border, 2 background, 3 icon, 4 shadow hover e 5 outline"
 />
 
@@ -73,7 +90,7 @@ O componente checkbox pode assumir três 3 variações:
 O componente possui dois tamanhos diferentes: _Medium_ e _Large_. O tamanho medium é o tamanho padrão. O large pode ser usado em casos específicos, como em cards por exemplo.
 
 <img
-  src={checkboxSize}
+  src={cardStates}
   alt="Duas variações de tamanho para o checkbox dispostas lado a lado"
 />
 
@@ -92,10 +109,10 @@ O componente foi projetado para atender os requisitos das Diretrizes de Acessibi
 - Use textos curtos e, sempre que possível, mantenha a label de uma caixa de seleção em uma única linha;
 
 <BestPracticesComponent
-  doImg={Do1}
+  doImg={cardDo1}
   doAlt="Checkbox com uma opção com texto mais longo, mas em linha única"
   doDescription="Manter o texto em linha única facilita a correlação entre a label e o seletor."
-  dontImg={Dont1}
+  dontImg={cardDont1}
   dontAlt="Checkbox com opções listadas uma embaixo da outra"
   dontDescription="O texto em duas linhas torna os espaços entre as opções irregulares."
 />
@@ -104,10 +121,10 @@ O componente foi projetado para atender os requisitos das Diretrizes de Acessibi
   para os usuários. O alinhamento horizontal dificulta correlacionar as labels às caixas correspondentes.
 
 <BestPracticesComponent
-  doImg={Do2}
+  doImg={cardDo2}
   doAlt="Checkbox com opções listadas lado a lado"
   doDescription="Alinhe os componentes verticalmente sempre que possível."
-  dontImg={Dont2}
+  dontImg={cardDont2}
   dontAlt="Checkbox com opções listadas lado a lado"
   dontDescription="Ao inserir os componentes lado a lado, certifique-se de inserir um espaçamento adequado entre as opções."
   warning="true"

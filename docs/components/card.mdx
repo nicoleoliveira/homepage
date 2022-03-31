@@ -9,6 +9,8 @@ import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
 
+import WebComponentReact from './../../src/components/WebComponent.js';
+
 import cardAnatomy from './img/card/card-anatomy-1.jpg';
 import cardTypes from './img/card/card-types.jpg';
 import cardStates from './img/card/card-states.jpg';
@@ -16,10 +18,6 @@ import cardDo1 from './img/card/card-do-1.jpg';
 import cardDo2 from './img/card/card-do-2.jpg';
 import cardDont1 from './img/card/card-dont-1.jpg';
 import cardDont2 from './img/card/card-dont-2.jpg';
-
-
-import WebComponentReact from './../../src/components/WebComponent.js';
-
 
 # Card
 
@@ -48,108 +46,93 @@ O componente prevê duas variações:
 Quando o card é apenas um “agrupador” das informações. Pode conter elementos interativos dentro dele, como por exemplo um link ou botão, mas não há nenhum tipo de interação no card propriamente dito.
 - **Interactive**
 Quando o card em si é o elemento interativo, podendo assumir as características de:
-   * Link: direciona a pessoa para outra página;
-   * Selectable: o card pode ser selecionado, em um conjunto de cards, por exemplo
+  * Link: direciona a pessoa para outra página;
+  * Selectable: o card pode ser selecionado, em um conjunto de cards, por exemplo
 
 <img
   src={cardTypes}
   alt="Tipos de cards lado a lado: read only, interactive e interactive selected"
-/>
+/> 
+    
 
-### Anatomia
+## Anatomia
 
-O card é composto basicamente por _border_ e _background_. Porém, sua variação **interactive** possui também _shadow_ e _outline_.
+O card é composto basicamente por *border* e *background*. Porém, sua variação ***interactive*** possui também *shadow* e *outline*.
 
 <img
   src={cardAnatomy}
-  alt="Anatomia do checkbox disposto lado a lado, sendo 1 border, 2 background, 3 icon, 4 shadow hover e 5 outline"
-/>
-
+  alt="Anatomia dos dois tipos de cards, com 1 border e 2 background em ambos. Apenas no card interativo, 3 shadow e 4 outline
+"
+/> 
 
 **1.** Border
 
 **2.** Background
 
-**3.** Icon (checked)
+**3.** Shadow
 
-**4.** Shadow (hover)
+**4.** Outline (*focused*)
 
-**5.** Outline (focused)
+O card é estruturado e estilizado por meio dos design tokens. Os tokens que podem ser alterados pelas marcas estão listados na seção de [propriedades customizáveis](#propriedades-customizáveis).
 
+# Boas práticas
 
+O componente foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (WCAG 2.1). Também foi estruturado com base em padrões de usabilidade para contribuir com uma boa experiência. 
 
-### Comportamento
-
-O componente checkbox pode assumir três 3 variações:
-- **Unchecked**: item desmarcado
-- **Checked**: item marcado
-- **Mixed:** quando, em um grupo de checkbox relacionados, alguns itens do grupo (mas não todos) foram marcados
-
-### Tamanhos
-
-O componente possui dois tamanhos diferentes: _Medium_ e _Large_. O tamanho medium é o tamanho padrão. O large pode ser usado em casos específicos, como em cards por exemplo.
-
-<img
-  src={cardStates}
-  alt="Duas variações de tamanho para o checkbox dispostas lado a lado"
-/>
-
-Os componentes são formados por tokens, sendo estes propriedades de estilo que definem como será estruturado e estilizado. Os tokens que podem ser alterados pelas marcas, podem ser conferidos na seção de [propriedades customizáveis](https://www.notion.so/Checkbox-b8870a364228481b8350567be1cc63d4).
-
-
-## Boas práticas
-
-O componente foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.1. Também foram estruturadas padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência para os usuários. Por isso, é muito importante que, ao aplicar esse componente, o proprietário do conteúdo leve em consideração alguns critérios e práticas:
+Por isso, ao aplicar esse componente, é muito importante que sejam levados em consideração alguns critérios e práticas:
 
 ### Uso
 
-- Ao utilizar label para acompanhar o checkbox, posicione a mesma ao lado direito da caixa de seleção;
-- Ordene as opções de checkbox de forma lógica, como por exemplo em ordem alfabética, numeral ou com base nos itens mais escolhidos;
-- É recomendável não utilizar mais do que 7 itens em uma lista de opções;
-- Use textos curtos e, sempre que possível, mantenha a label de uma caixa de seleção em uma única linha;
+- Mantenha a simplicidade e objetividade nos cards, evitando sobrecarregá-los com informações. Eles geralmente são uma pequena amostra do conteúdo ao qual estão relacionados. Podem conter conteúdos como imagem de um produto, título, descrição, link, botões, dentre outros;
+- Forneça contexto sobre o que acontecerá ao interagir com o card e qual o seu destino. Evite usar expressões genéricas como "Clique aqui".
+
+### Ações em cards
+
+- Quando a única ação possível for abrir ou visualizar mais detalhes do card, não inclua um botão para isso. A ação deve acontecer ao clicar em qualquer parte do card. Para esses casos, utilize o card do tipo *interactive;*
 
 <BestPracticesComponent
   doImg={cardDo1}
-  doAlt="Checkbox com uma opção com texto mais longo, mas em linha única"
-  doDescription="Manter o texto em linha única facilita a correlação entre a label e o seletor."
+  doAlt="Exemplo de card com ele inteiro pintado, sinalizando que todo ele é um elemento interativo"
+  doDescription="Ao manter todo o card como clicável, diminuímos a carga de informação, pois muitas vezes o card é usado em conjunto com vários outros com a mesma estrutura."
   dontImg={cardDont1}
-  dontAlt="Checkbox com opções listadas uma embaixo da outra"
-  dontDescription="O texto em duas linhas torna os espaços entre as opções irregulares."
+  dontAlt="Exemplo de card com um botão com o rótulo Visualizar”"
+  dontDescription="Não inclua botão quando a única ação do card for abri-lo."
 />
 
-- Prefira a utilização do componente em uma lista vertical ao invés de horizontal, pois permite uma leitura mais fácil
-  para os usuários. O alinhamento horizontal dificulta correlacionar as labels às caixas correspondentes.
+
+- Inclua um botão no card apenas quando a ação for diferente de apenas visualizar o conteúdo ao qual o card está relacionado. Para esses casos, opte por usar o card do tipo *read-only*;
+- Quando houver duas ou mais ações possíveis no cartão, mesmo que uma delas seja abrir o card, opte por disponibilizar as ações em botões.
+
 
 <BestPracticesComponent
   doImg={cardDo2}
-  doAlt="Checkbox com opções listadas lado a lado"
-  doDescription="Alinhe os componentes verticalmente sempre que possível."
+  doAlt="Card com dois botões, sinalizados como as únicas partes interativas daquele conteúdo"
+  doDescription="Usar card do tipo *read-only* em contextos com ações ajuda a evidenciar as interações dos elementos internos do card."
   dontImg={cardDont2}
-  dontAlt="Checkbox com opções listadas lado a lado"
-  dontDescription="Ao inserir os componentes lado a lado, certifique-se de inserir um espaçamento adequado entre as opções."
-  warning="true"
+  dontAlt="Card com 2 botões e toda a base do card sinalizados como partes interativas daquele conteúdo"
+  dontDescription="O uso de interação na base do card e em elementos internos pode gerar confusão e diminui a previsibilidade sobre qual ação acontece ao clicar no card."
 />
 
-### Comportamento
+- Quando tiver diferentes elementos interativos dentro do card, mantenha uma sequência lógica para navegação de um elemento para outro.
 
-- Prefira não deixar nenhuma opção pré-selecionada, pois pode passar despercebida pelos usuários e ocasionar no envio de uma resposta errada;
-- Se o checkbox estiver acompanhado de outro elemento, como label, é recomendado que a área clicável envolva o elemento também.
+### Conjunto de cards
 
-### Interação
-
-- A ordem de foco deve acontecer em sequência lógica. Como por exemplo, quando não tem nenhuma opção selecionada, o foco deve mover-se para o primeiro item da lista. (WCAG [2.4.3: Focus Order](https://www.w3.org/WAI/WCAG21/Understanding/focus-order))
-- Com navegação via teclado, o checkbox em foco é marcado ou desmarcado através da tecla _space_
+- Ao utilizar cards em conjunto, mantenha as larguras padronizadas de um card para o outro;
+- Organize-os de forma simples, pois a apresentação dos cards tem impacto no modo em como são compreendidos. Geralmente, o primeiro item fica posicionado no canto superior esquerdo e os demais seguem na sequência, da esquerda para a direita, e de cima para baixo.
 
 ### Acessibilidade tratada no componente
 
-Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas pelo proprietário do conteúdo. São elas:
+Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas. São elas:
 
-- O componente foi desenvolvido utilizando controles padrões HTML para permitir a identificação do mesmo na interface por tecnologias assistivas. ([WCAG 4.1.2: Name, Role, Value](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value))
-- A área do foco precisar ter uma espessura de pelo menos 2 pixels CSS e o foco não pode ficar escondido por outros elementos da tela. ([WCAG 2.4.12: Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-enhanced))
-- O estado de foco deve ser sempre preservado, inclusive quando o componente estiver desabilitado. ([WCAG 2.4.7: Focus Visible](https://www.w3.org/WAI/WCAG21/Understanding/focus-visible))
-- A cor não deve ser o único meio para diferenciar o componente do seu estado marcado e desmarcado. ([WGAG 1.4.1: Use of Color, 3.2.4: Consistent Identification](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color))
+**Card (Read-only e interactive)**
 
+- Utiliza medidas relativas, para se adequar às preferências e necessidades de quem for utilizar o sistema.
 
+**Card interative**
+
+- Desenvolvido com uso de controles padrões HTML, o que permite a identificação na interface por tecnologias assistivas. ([WCAG 4.1.2: Name, Role, Value](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value))
+- O foco é visível e possui uma espessura superior a 2 pixels CSS, não ficando escondido por outros elementos da tela. ([WCAG 2.4.12: Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-enhanced))
+- Quando selecionável, prevê interação por teclado, podendo ser selecionado através da tecla *space (*[WCAG 2.4.1 - Keyboard](https://www.w3.org/WAI/WCAG21/Understanding/keyboard))
 
 </TabItem>
 
@@ -231,13 +214,9 @@ O card possui estados e se modifica de acordo com o tipo do card. Os seus estado
 
 | Propriedade                  | Descrição                                                                        | Valor padrão             |
 | ---------------------------- | -------------------------------------------------------------------------------- | ------------------------ |
-| `--background-selected`      | cor de fundo quando estiver selecionado	                                      | $color-brand-01-lightest |
+| `--background-selected`      | cor de fundo quando estiver selecionado	                                        | $color-brand-01-lightest |
 | `--border-color-selected`    | cor da borda quando estiver selecionado                                          | $color-action-default    |
 
-<img
-  src={types}
-  alt="Os estados de interação do checkbox unchecked, com as respectivas versões checked e mixed abaixo"
-/>
 
 </TabItem>
 </Tabs>

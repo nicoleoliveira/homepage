@@ -7,7 +7,7 @@ sidebar_position: 2
 
 Os princípios são nossa direção, são eles que orientam todas as diretrizes e decisões em relação ao design system e a tudo que ele entrega. Os princípios do **Animalia DS** são:
 
-### **Ser acessível e inclusivo**
+### Ser acessível e inclusivo
 
 Queremos incentivar a acessibilidade e inclusão e por isso temos a responsabilidade de garantir que nossas aplicações sejam acessíveis e inclusivas desde a pesquisa dos componentes, passando pelo desenvolvimento do código até a utilização do usuário final.
 

@@ -12,7 +12,7 @@ que consiste em criar elementos customizáveis utilizando apenas Javascript e HT
 desta forma ser utilizado por aplicações contendo diversas tecnologias web, sendo assim uma
 biblioteca de componentes agnóstica.
 
-## Pré requisitos
+## Pré-requisitos
 
 Para usar a biblioteca Animalia DS, você precisa ter familiaridade com:
 
@@ -25,12 +25,80 @@ E para a instalação local no seu computador, precisará ter instalado:
 - [Node.js](https://nodejs.org/en/)
 - [NPM](https://docs.npmjs.com/getting-started/what-is-npm)
 
-## Instalação
+### Utilização básica sem framework
 
-Instale o pacote via npm:
+Os pacotes do Animalia utilizam internamente [módulos do tipo Node](https://nodejs.org/api/modules.html#modules_all_together).
+Portanto, para utilizar os componentes sem a utilização de algum framework, apenas Javascript, antes de incluir o
+componente diretamente do seu HTML, você irá precisar resolver os módulos Node.
+Existem diversas estratégias para isso, mas uma delas é utilizar o [Browserify](https://browserify.org/)
+ou o [Rollup](https://rollupjs.org/guide/en/) para gerar o bundle e resolver os módulos. Nesse passo-a-passo iremos
+utilizar o Rollup.
 
 ```
-npm install @animaliads/animalia-web-components
+npm i -D rollup @rollup/plugin-node-resolve
+```
+
+Crie um arquivo javascript chamado `index.js` e importe o componente:
+
+```javascript
+import '@animaliads/ani-button';
+```
+
+Agora crie outro arquivo javascript e adione a configuração do rollup para podermos gerar um arquivo final
+com o nosso componente.
+
+```javascript
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+
+import pkg from './package.json';
+
+const input = 'index.js';
+
+export default [
+  {
+    input,
+    output: {
+      file: 'bundle.js',
+      format: 'esm',
+      sourcemap: true,
+    },
+    plugins: [nodeResolve()],
+  },
+];
+```
+
+Agora execute o seguinte comando para gerar o bundle:
+
+```
+npx rollup -c
+```
+
+Esse comando irá gerar um arquivo chamando `bundle.js` no mesmo diretório, agora basta adicioná-lo em
+uma tag `script` dentro de um arquivo `.html`, junto com a tag do componente.
+
+```html
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World</title>
+  </head>
+  <body>
+    <!-- Componente ani-button -->
+    <ani-button>Hello World</ani-button>
+  </body>
+
+  <!-- Pacote gerado com o rollup -->
+  <script src="bundle.js"></script>
+</html>
+```
+
+## Instalação
+
+### Instalar o pacote via npm
+
+```
+npm install @animaliads/web-components
 ```
 
 Se preferir, você também pode instalar o componente de forma individual:
@@ -39,13 +107,11 @@ Se preferir, você também pode instalar o componente de forma individual:
 npm install @animaliads/ani-button
 ```
 
-## Como usar
+## Configuração
 
-Adicione o arquivo instalado no seu código `html`:
-
-```html
-<script type="module" src="./node_modules/@animaliads/web-components"></script>
-```
+A configuração irá depender do tipo de aplicação que você está criando, se utilizando algum framework,
+por exemplo Angular ou React, ou se é utilizando javascript básico.
+A seguir temos algumas formas de configuração para cada ambiente específico:
 
 <a id="angular"></a>
 
@@ -67,6 +133,11 @@ export class PageModule {}
 
 Você também precisará importar o pacote dentro do seu componente:
 
-```javascript
+```
 import '@animaliads/web-components';
 ```
+
+### Link úteis
+
+- [Angular elements](https://angular.io/guide/elements)
+- [Usando Web Components no React](https://pt-br.reactjs.org/docs/web-components.html)

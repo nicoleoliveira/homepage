@@ -1,0 +1,188 @@
+---
+id: textfield
+sidebar_label: Textfield
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import LiveDemoComponent from './helpers/components/live-demo.tsx';
+
+import textfield_types from './img/textfield/textfield-type.png';
+import textfield_anatomy from './img/textfield/textfield-anatomy.png';
+import textfield_single_anatomy from './img/textfield/textfield-single-anatomy.png';
+import textfield_do_1 from './img/textfield/textfield-do-1.jpg';
+import textfield_dont_1 from './img/textfield/textfield-dont-1.jpg';
+import textfield_do_2 from './img/textfield/textfield-do-2.jpg';
+import textfield_dont_2 from './img/textfield/textfield-dont-2.jpg';
+import textfield_do_3 from './img/textfield/textfield-do-3.jpg';
+import textfield_dont_3 from './img/textfield/textfield-dont-3.jpg';
+import textfield_states from './img/textfield/textfield-states.png';
+
+import WebComponentReact from './../../src/components/WebComponent.js';
+
+
+# Textfield
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properies'},
+  ]}>
+
+  <TabItem value="design">
+
+## Visão geral
+
+O `text-field` é um componente de entrada de dados que possibilita à pessoa que está interagindo com a interface insira e edite informações. Esse tipo de campo possui uma única linha e é bastante comum em formulários.
+
+### Tipos
+
+Pensando na modularidade do Design system, o text field possui duas composições distintas:
+
+- **Text field:** versão padrão do componente, com todos os elementos;
+- **Text field (Single)**: apenas o campo de entrada em sua forma mínima.
+
+<img
+  src={textfield_types}
+  alt="Dois tipos de text field: padrão e unitário."  
+/>
+
+
+### Anatomia
+
+Estruturalmente, o text field pode conter *label*, *field*, *help text* e *text error.* Já o campo em si, possui suas partes específicas, como *border* e *input text.*
+
+**Text Field**
+
+<img
+  src={textfield_anatomy}
+  alt="Demonstrativo das 4 partes do text field completo"  
+/>
+
+**1.** Label (`ani-label`)
+
+**2.** Field (single)
+
+**3.** Help text
+
+**4.** Text error (*error*)
+
+
+
+**Text Field (Single)**
+
+<img
+  src={textfield_single_anatomy}
+  alt="Text field na versão single, indicando as 5 partes"  
+/>
+
+**1.** Placeholder
+
+**2.** Border
+
+**3.** Background
+
+**4**. Input text
+
+**5.** Outline (*focus*)
+
+
+O componente é estruturado e estilizado por meio dos design tokens. Os tokens que podem ser alterados pelas marcas estão listados na seção de [propriedades customizáveis](#propriedades-customizáveis).
+
+
+<aside>
+🔗 A label é tratada como um componente à parte no Design System (`ani-label`). Você pode consultar suas variações e customizações na documentação específica desse componente.
+
+**→ Label**
+
+</aside>
+
+
+
+
+</TabItem>
+
+<TabItem value="dev">
+
+## Desenvolvimento
+
+### Instalação do pacote
+
+Caso você já tenha feito o passo-a-passo descrito em [Começando](?path=/docs/começando--page),
+você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
+
+Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
+
+```
+npm install @animaliads/ani-link
+```
+
+### Como utilizar
+
+Para utilizar este componente na sua aplicação você precisa importar o arquivo principal.
+Essa importação irá variar conforme o tipo de aplicação que você está utilizando, por exemplo: angular, react ou
+somente javascript.
+
+Depois de importar o arquivo principal, basta adicionar a tag `ani-link` no seu código:
+
+```html
+<ani-link url="https://google.com">Acesse o Google</ani-link>
+```
+
+> Para utilizar com o tema padrão, é necessário instalar e utilizar os pacotes `@animaliads/animalia-brand`
+> e `@animaliads/css-tokens`. Você pode ver um exemplo de utilização no [Live Demo](#live-demo).
+
+Para customizar o tema do componente, você pode estar utilizando as propriedades customizáveis
+da seguinte forma:
+
+```css
+ani-link {
+  --text-color: green;
+  --text-color-visited: orange;
+  --text-color-hover: black;
+}
+```
+
+Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis do link](#propriedades-customizáveis).
+
+### Live Demo
+
+
+<LiveDemoComponent
+  javascript="https://stackblitz.com/edit/ani-link?embed=1&file=index.html"
+  react="https://stackblitz.com/edit/react-ani-link?embed=1&file=src/App.js"
+/>
+
+Para saber a lista de propriedades e eventos, acesse o [guia de referencia de API](/docs/api-link--sample).
+
+
+
+</TabItem>
+
+  <TabItem value="custom-properies">
+
+## Propriedades customizáveis
+
+O componente de link possui propriedades customizáveis, que possibilitam fazer alterações, de acordo com a marca ou o tema a ser utilizado. Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca.
+
+Possui cinco estados, que se modificam de acordo com a interação do usuário. São eles: Normal, Hover, Focus, Pressed e Visited.
+
+| Propriedade               | Descrição                          | Valor padrão          |
+| ------------------------- | ---------------------------------- | --------------------- |
+| `--font-family`           | família tipográfica usada na label | $font-family-text     |
+| `--text-color`            | cor da label                       | $color-action-default |
+| `--text-color-hover`      | cor da label no estado hover       | $color-action-hover   |
+| `--outline-color-focused` | cor do outline do focus            | $color-action-focus   |
+| `--text-color-pressed`    | cor da label no estado pressed     | $color-action-pressed |
+| `--text-color-visited`    | cor da label no estado visited     | $color-action-pressed |
+
+<img
+  src={link_states}
+  alt="Os cinco estados de interação do link dispostos lado a lado"
+/>
+
+</TabItem>
+</Tabs>

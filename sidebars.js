@@ -40,7 +40,7 @@ module.exports = {
     'design-principles',
     //'changelog'
   ],
-  components: ['components/button','components/link','components/checkbox'],
+  components: ['components/button','components/card','components/checkbox','components/link'],
   // But you can create a sidebar manually
   /*
   tutorialSidebar: [

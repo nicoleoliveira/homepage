@@ -1,0 +1,118 @@
+---
+id: select
+sidebar_label: Select
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import BestPracticesComponent from './helpers/components/best-practices.tsx';
+import LiveDemoComponent from './helpers/components/live-demo.tsx';
+//
+// import selectDo1 from './img/select/select-do-1.jpg';
+// import selectDont1 from './img/select/select-dont-1.jpg';
+// import selectDo2 from './img/select/select-do-2.jpg';
+// import selectDont2 from './img/select/select-dont-2.jpg';
+// import selectAnatomy from './img/select/select-anatomy.jpg';
+// import selectSize from './img/select/select-size.jpg';
+// import selectTypes from './img/select/select-types.jpg';
+//
+
+import WebComponentReact from './../../src/components/WebComponent.js';
+
+
+# Select
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+ <TabItem value="design">
+
+## Visão geral
+
+
+</TabItem>
+
+<TabItem value="dev">
+
+## Desenvolvimento
+
+### Instalação do pacote
+
+Caso você já tenha feito o passo-a-passo descrito em [Começando](?path=/docs/começando--page),
+você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
+
+Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
+
+```
+npm install @animaliads/ani-select
+```
+
+### Como utilizar
+
+Para utilizar este componente na sua aplicação você precisa importar o arquivo principal.
+Essa importação irá variar conforme o tipo de aplicação que você está utilizando, por exemplo: angular, react ou
+somente javascript.
+
+Depois de importar o arquivo principal, basta adicionar a tag `ani-select` no seu código:
+
+```html
+<ani-select>exemplo de label</ani-select>
+```
+
+> Para utilizar com o tema padrão, é necessário instalar e utilizar os pacotes `@animaliads/animalia-brand`
+> e `@animaliads/css-tokens`. Você pode ver um exemplo de utilização no [Live Demo](#live-demo).
+
+Para customizar o tema do componente, você pode estar utilizando as propriedades customizáveis
+da seguinte forma:
+
+```css
+ani-select {
+  --color-unchecked: green;
+  --color-checked: coral;
+}
+```
+> Para criar `select group`,é importante adicionar os [controles via teclado indicados pela W3C para o select group](https://www.w3.org/TR/2017/WD-wai-aria-practices-1.1-20170628/examples/select/select-1/select-1.html) para manter a acessibilidade do componente.
+
+Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis](#propriedades-customizáveis).
+
+### Live Demo
+
+<LiveDemoComponent
+  react="https://stackblitz.com/edit/react-ani-select?embed=1&file=src/App.js"
+/>
+
+Para saber a lista de propriedades e eventos, acesse o [guia de referencia de API](/docs/api-select--sample).
+
+</TabItem>
+
+  <TabItem value="custom-properties">
+
+
+## Propriedades customizáveis
+
+O componente possui propriedades customizáveis, que possibilitam fazer alterações, de acordo com a marca ou o tema a ser utilizado. Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca.
+
+Possui cinco estados, que se modificam de acordo com a interação do usuário, sendo eles: _Normal_, _Hover_, _Focused_ e _Disabled_.
+
+| Propriedade                  | Descrição                                                                        | Valor padrão            |
+| ---------------------------- | -------------------------------------------------------------------------------- | ----------------------- |
+| `--color-unchecked `         | cor predominante (background) quando unchecked                                   | $color-neutral-light-00 |
+| `--color-checked`            | cor da borda e do preenchimento interno (fill) quando checked                    | $color-action-default   |
+| `--border-color`             | cor da borda no estado normal                                                    | $color-neutral-dark-70  |
+| `--color-hover`              | cor da borda no estado hover                                                     | $color-action-hover     |
+| `--shadow-color-hover`       | cor da borda externa no estado hover                                             | $color-brand-01-lighter |
+| `--color-unchecked-disabled` | cor predominante (background) quando unchecked no estado disabled                | $color-action-disabled  |
+| `--color-checked-disabled`   | cor da borda e do preenchimento interno (fill) quando checked no estado disabled | $color-neutral-dark-70  |
+| `--outline-color-focused`    | cor do outline do focus                                                          | $color-action-focus     |
+
+
+
+</TabItem>
+</Tabs>

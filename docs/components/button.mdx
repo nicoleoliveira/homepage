@@ -5,10 +5,28 @@ sidebar_label: Button
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import BestPracticesComponent from './helpers/components/best-practices.tsx';
+import LiveDemoComponent from './helpers/components/live-demo.tsx';
 
-
-import ButtonAnatomy from './img/button-anatomy.svg';
-import button_states from './img/button-states.jpg';
+import buttonAnatomy from './img/button/button-anatomy.jpg';
+import buttonPrimary from './img/button/button-primary.jpg';
+import buttonSecondary from './img/button/button-secondary.jpg';
+import buttonTertiary from './img/button/button-tertiary.jpg';
+import buttonPrimaryDanger from './img/button/button-primary-danger.jpg';
+import buttonSecondaryDanger from './img/button/button-secondary-danger.jpg';
+import buttonSize from './img/button/button-size.jpg';
+import buttonTypes from './img/button/button-types.jpg';
+import buttonWidth from './img/button/button-width.jpg';
+import buttonDo1 from './img/button/button-do-1.jpg';
+import buttonDo2 from './img/button/button-do-2.jpg';
+import buttonDo3 from './img/button/button-do-3.jpg';
+import buttonDo4 from './img/button/button-do-4.jpg';
+import buttonDo5 from './img/button/button-do-5.jpg';
+import buttonDont1 from './img/button/button-dont-1.jpg';
+import buttonDont2 from './img/button/button-dont-2.jpg';
+import buttonDont3 from './img/button/button-dont-3.jpg';
+import buttonDont4 from './img/button/button-dont-4.jpg';
+import buttonDont5 from './img/button/button-dont-5.jpg';
 
 import WebComponentReact from './../../src/components/WebComponent.js';
 
@@ -19,9 +37,9 @@ import WebComponentReact from './../../src/components/WebComponent.js';
   defaultValue="design"
   lazy
   values={[
-    {label: 'Design', value: 'design'},
+    {label: 'Uso', value: 'design'},
     {label: 'Desenvolvimento', value: 'dev'},
-    {label: 'Propriedades Customizaveis', value: 'custom-properies'},
+    {label: 'Customização', value: 'custom-properties'},
   ]}>
 
   <TabItem value="design">
@@ -30,8 +48,6 @@ import WebComponentReact from './../../src/components/WebComponent.js';
 
 Os botões são utilizados para realizar ações e para tomada de decisões. Podem ser utilizado em páginas e também dentro de outros componentes.
 
-
-<WebComponentReact />
 
 ### Boas práticas
 
@@ -50,13 +66,6 @@ O botão é composto por um background que recebe uma cor de marca e uma label q
 
 **2.** Background
 
-### Estados do botão
-
-O botão possui estados e se modifica de acordo com a interação do usuário. São eles:
-
-Default, Hover, Focus, Disabled e Focusable Disabled.
-
-<img src={button_states} alt="Os cinco estados do botão primário dispostos lado a lado" />
 
 ## Acessibilidade
 
@@ -161,36 +170,83 @@ Link úteis:
 
 </TabItem>
 
-  <TabItem value="custom-properies">
+  <TabItem value="custom-properties">
 
 ## Propriedades customizáveis
 
-O botão possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
+O componente de botão possui propriedades customizáveis que podem variar de acordo com o tema selecionado. As propriedades customizáveis podem ser alteradas para cada produto, de acordo com os tokens de marca e tokens globais. Com isso, garantimos uma consistência no Design System, sem perder a identidade de cada marca.
+O botão possui estados e se modifica de acordo com a interação do usuário. São eles: Default, Hover, Focus e Disabled.
 
 ### Button
+Estas são propriedades gerais do componente button, independente do tipo
 
-| Propriedade        | Contexto   |
-| ------------------ | ---------- |
-| `--font-family`    | Label      |
-| `--text-color`     | Label      |
-| `--font-size`      | Label      |
-| `--line-height`    | Label      |
-| `--background`     | Background |
-| `--border-radius`  | Background |
-| `--spacing-squish` | Background |
-| `--shadow`         | Background |
+| Propriedade               | Descrição                                                                                                   | Valor padrão                  |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| `--font-family`           | família tipográfica usada na label                                                                          | $font-family-text             |
+| `--font-size`             | tamanho da fonte na label                                                                                   | $font-size-default            |
+| `--font-weight`           | peso da fonte na label                                                                                      | $font-weight-bold             |
+| `--line-height`           | altura da linha da label                                                                                    | $line-height-none             |
+| `--border-radius`         | arredondamento da borda                                                                                     | $border-radius-md             |
+| `--border-width`          | espessura da borda                                                                                          | $border-width-md              |
+| `--padding`               | espaço interno entre a label e a borda do background (padding)                                              | 0, 1em                        |
+| `--outline-color-focused` | cor do outline do focus                                                                                     | $color-action-focus           |
+| `--color`                 | cor principal que será aplicado internamento no botão de acordo com o tipo (primary, secondary ou tertiray) | $color-action-default         |
+| `--color-disabled`        | cor principal no estado disabled                                                                            | $color-action-disabled        |
+| `--color-pressed`         | cor principal no estado pressed                                                                             | $color-action-pressed         |
+| `--color-danger`          | cor principal quando o componente estiver danger                                                            | $color-feedback-negative-dark |
 
-### Propriedades customizáveis em cada estado
+### Primary
 
-| Estado             | Propriedade                | Contexto   |
-| ------------------ | -------------------------- | ---------- |
-| hover              | `--background-hover`       | Background |
-| focus              | `--outline-color-focused`  | Outline    |
-| pressed            | `--background-pressed`     | Background |
-| pressed            | `--outline-color-pressed`  | Outline    |
-| disabled           | `--background-disabled`    | Background |
-| disabled           | `--text-color-disabled`    | Label      |
-| focusable disabled | `--outline-color-disabled` | Outline    |
+| Propriedade              | Descrição                                                           | Valor padrão                     |
+| ------------------------ | ------------------------------------------------------------------- | -------------------------------- |
+| `--text-color`           | cor da label                                                        | $color-neutral-light-00          |
+| `--shadow`               | sombra do background                                                | $shadow-none                     |
+| `--color-hover`          | cor do background estado hover                                      | $color-action-hover              |
+| `--text-color-disabled`  | cor da label no estado disabled                                     | $color-neutral-dark-70           |
+| `--text-color-danger`    | cor da label quando o componente estiver danger                     | $color-neutral-light-00          |
+| `--color-danger-hover`   | cor do background estado hover quando o componente estiver danger   | $color-feedback-negative-darker  |
+| `--color-danger-pressed` | cor do background estado pressed quando o componente estiver danger | $color-feedback-negative-darkest |
+
+<img
+  src={buttonPrimary}
+  alt="Os cinco estado de interação do botão primário dispostos lado a lado."
+/>
+
+<img
+  src={buttonPrimaryDanger}
+  alt="Os cinco estado de interação do botão de perigo primário dispostos lado a lado."
+/>
+
+### Secondary
+
+| Propriedade                   | Descrição                                                 | Valor padrão                     |
+| ----------------------------- | --------------------------------------------------------- | -------------------------------- |
+| `--background-hover`          | cor do background no estado hover                         | $color-brand-01-lighter          |
+| `--border-color-hover`        | cor do border no estado hover                             | $color-brand-01-darkest          |
+| `--background-pressed`        | cor do background no estado pressed                       | $color-brand-01-light            |
+| `--border-color-danger-hover` | cor do border no estado hover quando estiver danger       | $color-feedback-negative-darkest |
+| `--background-danger-hover`   | cor do background no estado hover quando estiver danger   | $color-feedback-negative-lighter |
+| `--background-danger-pressed` | cor do background no estado pressed quando estiver danger | $color-feedback-negative-light   |
+
+<img
+  src={buttonSecondary}
+  alt="Os cinco estado de interação do botão secundário dispostos lado a lado."
+/>
+
+<img
+  src={buttonSecondaryDanger}
+  alt="Os cinco estado de interação do botão de perigo secundário dispostos lado a lado."
+/>
+
+### Tertiary
+
+O botão terciário não tem propriedades específicas de customização, ele irá se adaptar conforme
+as propriedades especificadas no botão de forma geral.
+
+<img
+  src={buttonTertiary}
+  alt="Os cinco estado de interação do botão terciário dispostos lado a lado."
+/>
 
 </TabItem>
 </Tabs>

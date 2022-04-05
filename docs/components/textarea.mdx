@@ -1,0 +1,109 @@
+---
+id: textarea
+sidebar_label: Textarea
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import BestPracticesComponent from './helpers/components/best-practices.tsx';
+import LiveDemoComponent from './helpers/components/live-demo.tsx';
+
+import WebComponentReact from './../../src/components/WebComponent.js';
+
+
+# Textfield
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+## Visão geral
+
+
+</TabItem>
+
+<TabItem value="dev">
+
+## Desenvolvimento
+
+
+### Instalação do pacote
+
+Caso você já tenha feito o passo-a-passo descrito em [Começando](?path=/docs/começando--page),
+você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
+
+Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
+
+```
+npm install @animaliads/ani-textarea
+```
+
+### Como utilizar
+
+Para utilizar este componente na sua aplicação você precisa importar o arquivo principal.
+Essa importação irá variar conforme o tipo de aplicação que você está utilizando, por exemplo: angular, react ou
+somente javascript.
+
+Depois de importar o arquivo principal, basta adicionar a tag `ani-textarea` no seu código:
+
+```html
+<ani-textarea>exemplo de label</ani-textarea>
+```
+
+> Para utilizar com o tema padrão, é necessário instalar e utilizar os pacotes `@animaliads/animalia-brand`
+> e `@animaliads/css-tokens`. Você pode ver um exemplo de utilização no [Live Demo](#live-demo).
+
+Para customizar o tema do componente, você pode estar utilizando as propriedades customizáveis
+da seguinte forma:
+
+```css
+ani-textarea {
+  --color: green;
+}
+```
+
+Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis](#propriedades-customizáveis).
+
+### Live Demo
+
+<LiveDemoComponent react="https://stackblitz.com/edit/react-ani-textarea?embed=1&file=src/App.js" />
+
+Para saber a lista de propriedades e eventos, acesse o [guia de referencia de API](/docs/api-textarea--sample).
+
+</TabItem>
+
+
+  <TabItem value="custom-properties">
+
+## Propriedades customizáveis
+
+O componente de textarea possui propriedades customizáveis, que possibilitam fazer alterações, de acordo com a marca ou o tema a ser utilizado. Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca.
+
+Possui cinco estados, que se modificam de acordo com a interação do usuário, sendo eles: _Normal_, _Hover_, _Focused_, _Disabled_ e _Read-only_.
+
+| Propriedade                | Descrição                                                | Valor padrão             |
+| -------------------------- | -------------------------------------------------------- | ------------------------ |
+| `--font-family`            | família tipográfica                                      | $font-family-text        |
+| `--font-size`              | tamanho da fonte                                         | $font-size-default       |
+| `--text-color-placeholder` | cor de texto do placeholder                              | $color-neutral-light-30  |
+| `--color`                  | cor predominante (borda)                                 | $color-neutral-dark-70   |
+| `--background`             | cor do background                                        | $color-neutral-light-05  |
+| `--text-color`             | cor do texto                                             | $color-neutral-dark-90   |
+| `--color-hover`            | cor predominante (borda) no estado hover                 | $color-action-hover      |
+| `--background-hover`       | cor do background no estado hover                        | $color-brand-01-lightest |
+| `--color-focused`          | cor predominante (borda) no estado focus                 | $color-action-default    |
+| `--outline-color-focused`  | cor do outline do focus                                  | $color-action-focus      |
+| `--color-disabled`         | cor predominante (borda) no estado desabilitado          | $color-action-disabled   |
+| `--background-disabled`    | cor do background no estado hover no estado desabilitado | $color-neutral-light-20  |
+| `--text-color-disabled`    | cor do texto no estado desabilitado                      | $color-neutral-dark-70   |
+
+
+</TabItem>
+</Tabs>

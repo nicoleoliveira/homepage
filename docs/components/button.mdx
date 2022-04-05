@@ -8,15 +8,15 @@ import TabItem from '@theme/TabItem';
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
 
+import buttonTypes from './img/button/button-types.jpg';
 import buttonAnatomy from './img/button/button-anatomy.jpg';
+import buttonSize from './img/button/button-size.jpg';
+import buttonWidth from './img/button/button-width.jpg';
 import buttonPrimary from './img/button/button-primary.jpg';
 import buttonSecondary from './img/button/button-secondary.jpg';
 import buttonTertiary from './img/button/button-tertiary.jpg';
 import buttonPrimaryDanger from './img/button/button-primary-danger.jpg';
 import buttonSecondaryDanger from './img/button/button-secondary-danger.jpg';
-import buttonSize from './img/button/button-size.jpg';
-import buttonTypes from './img/button/button-types.jpg';
-import buttonWidth from './img/button/button-width.jpg';
 import buttonDo1 from './img/button/button-do-1.jpg';
 import buttonDo2 from './img/button/button-do-2.jpg';
 import buttonDo3 from './img/button/button-do-3.jpg';
@@ -27,6 +27,7 @@ import buttonDont2 from './img/button/button-dont-2.jpg';
 import buttonDont3 from './img/button/button-dont-3.jpg';
 import buttonDont4 from './img/button/button-dont-4.jpg';
 import buttonDont5 from './img/button/button-dont-5.jpg';
+
 
 import WebComponentReact from './../../src/components/WebComponent.js';
 
@@ -48,47 +49,144 @@ import WebComponentReact from './../../src/components/WebComponent.js';
 
 Os botões são utilizados para realizar ações e para tomada de decisões. Podem ser utilizado em páginas e também dentro de outros componentes.
 
+### Tipos
 
-### Boas práticas
+Cada tipo de botão representa uma prioridade na interface e é recomendado que sejam utilizados de acordo com a importância das ações que o usuário deve realizar. Outro fator importante, é manter a consistência dentro dos produtos para que os usuários identifiquem facilmente as ações.
 
-- Use labels (rótulos) diretos, curtos e intuitivos, que direcionem o usuário para o que será realizado. Para isso, prefira utilizar verbos, por exemplo: "Salvar" e "Adicionar";
-- A interação de foco deve compor os botões, sendo navegação por mouse ou teclado, e em sequência lógica;
-- Evite utilizar muitos botões em uma única tela, pois isso aumenta a carga cognitiva do usuário e vai aumentar seu tempo de decisão;
-- Não use cores para label e backgroud com baixo contraste entre elas, pois isso dificulta o entendimento do conteúdo do botão.
+<img
+  src={buttonTypes}
+  alt="Os cinco tipos de botões dispostos lado a lado, sendo 1 o Primary, 2 o Secondary, 3 o Tertiary, 4 o Primary Button e 5 o Secondary Danger"
+/>
+
+1. **Primary**: Os botões primários devem ser usados para a ação principal da página e preferencialmente apenas um botão deste tipo por página, para direcionar o usuário para a ação principal de forma clara.
+2. **Secondary**: Devem ser utilizados para ações secundárias na página. Os botões secundários podem ser utilizado ao lado dos botões primários, como segunda ação, e também isolados na página quando não forem a ação principal e já houver um botão primário.
+3. **Tertiary**: Os botões terciários chamam menos atenção que os outros botões e devem ser utilizados para ações menos importantes. Ao inserir o botão de forma isolada, utilize preferencialmente acompanhado de um ícone que represente a ação, para aumentar o entendimento do usuário de que há uma ação a ser realizada. Também podem ser utilizados como terceira ação junto a um botão secundário e primário.
+4. **Primary Danger**: Utilizar quando a ação principal trouxer grande impacto para o usuário, como excluir conta ou apagar um grande volume de dados, são situações difíceis de reverter e que precisam de mais atenção ao executar. Neste botão, também é recomendado a utilização de um ícone de alerta junto a label, para que os usuários consigam diferenciar facilmente do botão primário. Não deve ser inserido mais de um botão de perigo por página.
+5. **Secondary Danger**: Quando a segunda ação for de grande impacto, como cancelar um processo muito importante, deverá ser utilizado este botão. Assim como no botão primário de perigo, é recomendado o uso do ícone de alerta junto a label e somente um botão por página.
 
 ### Anatomia
 
-O botão é composto por um background que recebe uma cor de marca e uma label que descreve a interação que será realizada.
+O botão é composto por um background ou border que recebe uma cor de marca e uma label que descreve a ação que será realizada.
 
-<ButtonAnatomy />
+<img
+  src={buttonAnatomy}
+  alt="Anatomia dos cinco tipos de botões disposto lado a lado, sendo 1 a label, 2 o background e 3 o border"
+/>
 
-**1.** Label
+**1.** Label (rótulo)
 
 **2.** Background
 
+**3.** Border
 
-## Acessibilidade
+Os componentes são formados por tokens, sendo estes propriedades de estilo que definem como será estruturado e estilizado o botão. Os tokens que podem ser alterados pelas marcas, podem ser conferidos na seção de [propriedades customizáveis](#propriedades-customizáveis).
 
-O componente botão foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.1, mas alterações feitas na aplicação deste podem afetar essa conformidade.
+### Tamanhos
 
-Por isso, é muito importante que, ao aplicar esse componente, o proprietário do conteúdo leve em consideração os seguintes critérios:
+Todos os tipos de botões podem ser utilizados em três tamanhos diferentes: Small, Medium e Large. O tamanho medium é o tamanho padrão do botão e deve ser o mais aplicado. Utilize as outras variações para criar uma hierarquia na página, alinhada aos tipos de botões .
 
-**Operável**
+<img
+  src={buttonSize}
+  alt="Três variações de tamanho para o botão dispostas lado a lado, sendo 1 o tamanho small, 2 o tamanho medium e 3 o tamanho large"
+/>
 
-- O botão deve sempre ter um rótulo que descreva precisamente a ação que o mesmo executa. [2.4.6: Headings and Labels](https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels)
-- O nome acessível do botão deve conter o rótulo visível do mesmo. Em caso de descrição adicional, o rótulo deverá ser lido primeiro. [2.5.3: Label in Name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name)
-- O estado de foco deve ser sempre preservado, inclusive quando o botão estiver desabilitado. [2.4.7: Focus Visible](https://www.w3.org/WAI/WCAG21/Understanding/focus-visible)
-- Após a ativação do botão o foco deve ser movido dependendo do tipo de ação que o botão executa. Consultar lista de exemplos em [W3C WAI-ARIA 3.5 Button](https://www.w3.org/TR/wai-aria-practices-1.1/#button)
+**1.** Small
 
-**Perceptível**
+**2.** Medium
 
-- Entre as cores do rótulo do botão e seu background o contraste deve ser de no mínimo 7:1, para botões ativos. [1.4.6: Contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html)
+**3.** Large
 
-### Diretrizes tratadas no componente
+Por padrão, a largura do botão se adequa de acordo com o tamanho do texto. Mas caso seja necessário, é possível redefinir a largura para se ajustar ao tamanho do componente no qual o botão está inserido.
+
+<img
+  src={buttonWidth}
+  alt="Dois botões demonstrando como a largura do botão aumenta conforme o a label que é inserida"
+/>
+
+
+## Boas práticas
+
+O componente do botão foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.1. Também foram estruturadas padrões de usabilidade para auxiliar na utilização do componente e garantir uma boa experiência para os usuários. Por isso, é muito importante que, ao aplicar esse componente, o proprietário do conteúdo leve em consideração alguns critérios e práticas:
+
+### Uso
+
+- Evite utilizar muitos botões em uma única tela, pois isso aumenta a carga cognitiva do usuário e vai aumentar seu tempo de decisão;
+- Utilize sempre a ação principal do lado direito da página, e os demais botões à esquerda, respeitando a hierarquia.
+
+<BestPracticesComponent
+  doImg={buttonDo1}
+  doAlt="Três botões dispostos à direita, terciário, secundário e primário, respectivamente"
+  doDescription="Alinhe os botões sempre à direita da página, sendo primeiro o botão primário, depois secundário e terciário."
+  dontImg={buttonDont1}
+  dontAlt="Três botões dispostos a esquerda, primário, secundário e terciário, respectivamente"
+  dontDescription="Não insira os botões fora da hierarquia e alinhado à esquerda da página."
+/>
+
+### Label em botões
+
+- Use labels (rótulos) diretas, curtas e intuitivas, que direcionem o usuário para o que será realizado. Para isso, prefira utilizar verbos, por exemplo: "Salvar" e "Adicionar". Quando necessária maior especificação, pode ser utilizado um complemento junto ao verbo, como por exemplo: "Salvar rascunho". ([WCAG 2.4.6: Headings and Labels](https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels))
+- O nome acessível do botão, que será lido por leitores de tela, deve ser o mesmo nome definido na label do botão, para garantir que os usuários tenham as mesmas experiências. ([WCAG 2.5.3: Label in Name](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name))
+
+<BestPracticesComponent
+  doImg={buttonDo2}
+  doAlt="Botão secundário com a label Salvar rascunho e botão primário com a label Publicar"
+  doDescription="Utilize labels diretas e quando necessário acrescente um complemento."
+  dontImg={buttonDont2}
+  dontAlt="Botão primário com a label Publicar a página Animalia"
+  dontDescription="Não use uma label com muitas palavras, priorize somente o necessário para o entendimento do usuário."
+/>
+
+### Ícones
+
+- Adicione um ícone junto a label do botão quando precisar descrever melhor a ação que o usuário irá executar. Utilize ícones claros que possuem relação direta com a label. O ícone à esquerda representa uma ação imediata; e à direita, representa continuidade.
+- Para os botões de perigo e botões terciários, é recomendado preferencialmente a utilização do ícone acompanhando a label.
+- Para a utilização de ícones isolados, use o botão terciário sem label, para que a acessibilidade do componente seja garantida.
+
+<BestPracticesComponent
+  doImg={buttonDo3}
+  doAlt="Botão de perigo secundário com ícone de lixeira a esquerda da label e um botão primário com ícone de seta a direita da label"
+  doDescription="Utilize ícones que possuem associação clara com a label."
+  dontImg={buttonDont3}
+  dontAlt="Botão primário com ícone de lixeira embaixo da label"
+  dontDescription="Não alinhe o ícone em cima ou embaixo da label."
+/>
+
+### Cores
+
+- Não use cores para label e background com baixo contraste entre si, pois isso dificulta o entendimento do conteúdo do botão. É possível conferir se o contraste está adequado e atingindo o valor de 7:1 em um [Contrast Checker](https://webaim.org/resources/contrastchecker/). ([WCAG 1.4.6: Contrast](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html))
+
+<BestPracticesComponent
+  doImg={buttonDo4}
+  doAlt="Botão primário e secundário com cores com contraste de 8.01:1"
+  doDescription="Contraste alto entre o background e a label. Confira também o contraste com o fundo."
+  dontImg={buttonDont4}
+  dontAlt="Botão primário e secundário com cores com contraste de 1.93:1"
+  dontDescription="Contraste inferior a 7:1 entre o background e a label"
+/>
+
+### Interação
+
+- A interação de foco deve compor os botões, sendo navegação por mouse ou teclado, e em sequência lógica. Consultar lista de exemplos em ([W3C WAI-ARIA 3.5 Button](https://www.w3.org/TR/wai-aria-practices-1.1/#button))
+- Ao alterar as propriedades customizadas de espaçamento no botão, é necessário atenção porque o botão precisa ter uma área de interação de no mínimo 44 x 44px, ou seja, nem toda a área precisa ser clicável, mas a distância entre os elementos interativos precisa ser de pelo menos 44px. ([WGAG 2.5.8: Target Size (Minimum](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum))
+- O mesmo cuidado é necessário para a utilização do botão no tamanho small.
+
+<BestPracticesComponent
+  doImg={buttonDo5}
+  doAlt="Botões small primário e secundário alinhados verticalmente com um espaçamento de 12px entre eles, totalizando 44px de área segura."
+  doDescription="Incluir um espaçamento adequado entre os componentes para atingir uma área segura mínima de 44px."
+  dontImg={buttonDont5}
+  dontAlt="botões small primário e secundário alinhados verticalmente com um espaçamento de 8px entre eles, não atingindo 44px de área segura."
+  dontDescription="Não alinhe os componentes muito próximos um dos outros, pois a área de interação pode ser comprometida."
+/>
+
+### Acessibilidade tratada no componente
 
 Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas pelo proprietário do conteúdo. São elas:
 
-- Quando em foco, o botão é ativado usando as teclas de _Espaço_ e _Enter_ do teclado. [W3C WAI-ARIA 3.5 Button - Keyboard Interaction](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard-interaction-3)
+- Quando em foco, o botão é ativado usando as teclas de _Espaço_ e _Enter_ do teclado. ([W3C WAI-ARIA 3.5 Button - Keyboard Interaction](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard-interaction-3))
+- A área do foco precisar ter uma espessura de pelo menos 2 pixels CSS e o foco não pode ficar escondido por outros elementos da tela. ([WCAG 2.4.12: Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance-enhanced))
+- O estado de foco deve ser sempre preservado, inclusive quando o botão estiver desabilitado. ([WCAG 2.4.7: Focus Visible](https://www.w3.org/WAI/WCAG21/Understanding/focus-visible))
+
 
 </TabItem>
 
@@ -96,7 +194,8 @@ Algumas diretrizes de acessibilidade já são tratadas no componente, internamen
 
 ## Desenvolvimento
 
-### Instalação
+Caso você já tenha feito o passo-a-passo descrito em [Começando](?path=/docs/começando--page),
+você pode pular esta instalação e ir direto para o tópico [Como utilizar](#como-utilizar).
 
 Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
 
@@ -104,69 +203,40 @@ Você pode instalar o componente de forma isolada, conforme o exemplo abaixo:
 npm install @animaliads/ani-button
 ```
 
-Ou instalar a biblioteca inteira de componentes:
-
-```
-npm install @animaliads/web-components
-```
-
 ### Como utilizar
 
-Para utilizar o web component na sua aplicação você precisa importar o arquivo principal:
+Para utilizar este componente na sua aplicação você precisa importar o arquivo principal.
+Essa importação irá variar conforme o tipo de aplicação que você está utilizando, por exemplo: angular, react ou
+somente javascript.
 
-```html title="html"
-<script src="./node_modules/@animaliads/ani-button"></script>
+Depois de importar o arquivo principal, basta adicionar a tag `ani-button` no seu código:
+
+```html
+<ani-button>Salvar cadastro</ani-button>
 ```
 
-Mas caso você estiver utilizando algum framework, pode ser necessário seguir a documentação do próprio
-componente para adicionar o web component. Ou apenas importar o arquivo do componente
-em um arquivo JS, por exemplo:
-
-```javascript title="javascript"
-import '@animaliads/ani-button';
-```
-
-Depois dessa configuração, basta adicionar a tag `ani-button` no seu código:
-
-```html title="html"
-<ani-button>Hello world!</ani-button>
-```
+> Para utilizar com o tema padrão, é necessário instalar e utilizar os pacotes `@animaliads/animalia-brand`
+> e `@animaliads/css-tokens`. Você pode ver um exemplo de utilização no [Live Demo](#live-demo).
 
 Para customizar o tema do componente, você pode estar utilizando as propriedades customizáveis
 da seguinte forma:
 
-```css title="css"
-ani-button {
-  --background: red;
+```css
+ani-button[kind='secondary'] {
+  --border-color: purple;
   --line-height: 100%;
   --border-radius: 3px;
 }
 ```
 
-Para saber quais são as propriedades disponível, consulte [propriedades customizáveis do botão](#propriedades-customizáveis).
+Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis do botão](#propriedades-customizáveis).
 
 ### Live Demo
 
-<iframe
-  src="https://codesandbox.io/embed/ani-button-ofjep?fontsize=14&hidenavigation=1&theme=dark"
-  style={{
-    width: '90%',
-    height: '500px',
-    border: 'solid 1px black',
-    borderRadius: '4px',
-    overflow: 'hidden',
-  }}
-  title="ani-button"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+<LiveDemoComponent react="https://stackblitz.com/edit/react-ani-button?embed=1&file=src/App.js" />
 
-Para saber a lista de propriedades e eventos, acesse o [guia de referencia de API](/docs/api-button--sample).
+Para saber a lista de propriedades e eventos, acesse o [guia de referência de API](/docs/api-button--sample).
 
-Link úteis:
-
-- [Angular elements](https://angular.io/guide/elements)
-- [Usando Web Components no React](https://pt-br.reactjs.org/docs/web-components.html)
 
 </TabItem>
 

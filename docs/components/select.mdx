@@ -8,7 +8,6 @@ import TabItem from '@theme/TabItem';
 
 import BestPracticesComponent from './helpers/components/best-practices.tsx';
 import LiveDemoComponent from './helpers/components/live-demo.tsx';
-//
 // import selectDo1 from './img/select/select-do-1.jpg';
 // import selectDont1 from './img/select/select-dont-1.jpg';
 // import selectDo2 from './img/select/select-do-2.jpg';
@@ -16,7 +15,6 @@ import LiveDemoComponent from './helpers/components/live-demo.tsx';
 // import selectAnatomy from './img/select/select-anatomy.jpg';
 // import selectSize from './img/select/select-size.jpg';
 // import selectTypes from './img/select/select-types.jpg';
-//
 
 import WebComponentReact from './../../src/components/WebComponent.js';
 
@@ -56,14 +54,16 @@ npm install @animaliads/ani-select
 
 ### Como utilizar
 
-Para utilizar este componente na sua aplicação você precisa importar o arquivo principal.
-Essa importação irá variar conforme o tipo de aplicação que você está utilizando, por exemplo: angular, react ou
-somente javascript.
+Para utilizar este componente na sua aplicação você precisa importar o arquivo principal. Essa importação irá variar conforme o tipo de aplicação que você está utilizando, por exemplo: angular, react ou somente javascript.
 
 Depois de importar o arquivo principal, basta adicionar a tag `ani-select` no seu código:
 
 ```html
-<ani-select>exemplo de label</ani-select>
+<ani-select
+  items='[{"label": "item 1", "value": 1}, {"label": "item 2", "value": 2}]'
+>
+  exemplo de label
+</ani-select>
 ```
 
 > Para utilizar com o tema padrão, é necessário instalar e utilizar os pacotes `@animaliads/animalia-brand`
@@ -78,7 +78,6 @@ ani-select {
   --color-checked: coral;
 }
 ```
-> Para criar `select group`,é importante adicionar os [controles via teclado indicados pela W3C para o select group](https://www.w3.org/TR/2017/WD-wai-aria-practices-1.1-20170628/examples/select/select-1/select-1.html) para manter a acessibilidade do componente.
 
 Para saber quais são as propriedades disponíveis, consulte [propriedades customizáveis](#propriedades-customizáveis).
 
@@ -97,21 +96,27 @@ Para saber a lista de propriedades e eventos, acesse o [guia de referencia de AP
 
 ## Propriedades customizáveis
 
-O componente possui propriedades customizáveis, que possibilitam fazer alterações, de acordo com a marca ou o tema a ser utilizado. Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca.
+O componente de select possui propriedades customizáveis, que possibilitam fazer alterações, de acordo com a marca ou o tema a ser utilizado. 
+Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca.
 
-Possui cinco estados, que se modificam de acordo com a interação do usuário, sendo eles: _Normal_, _Hover_, _Focused_ e _Disabled_.
+Possui quatro estados, que se modificam de acordo com a interação do usuário, sendo eles: _Normal_, _Hover_, _Focused_ e _Disabled_.
 
-| Propriedade                  | Descrição                                                                        | Valor padrão            |
-| ---------------------------- | -------------------------------------------------------------------------------- | ----------------------- |
-| `--color-unchecked `         | cor predominante (background) quando unchecked                                   | $color-neutral-light-00 |
-| `--color-checked`            | cor da borda e do preenchimento interno (fill) quando checked                    | $color-action-default   |
-| `--border-color`             | cor da borda no estado normal                                                    | $color-neutral-dark-70  |
-| `--color-hover`              | cor da borda no estado hover                                                     | $color-action-hover     |
-| `--shadow-color-hover`       | cor da borda externa no estado hover                                             | $color-brand-01-lighter |
-| `--color-unchecked-disabled` | cor predominante (background) quando unchecked no estado disabled                | $color-action-disabled  |
-| `--color-checked-disabled`   | cor da borda e do preenchimento interno (fill) quando checked no estado disabled | $color-neutral-dark-70  |
-| `--outline-color-focused`    | cor do outline do focus                                                          | $color-action-focus     |
-
+| Propriedade                  | Descrição                                                                        | Valor padrão             |
+| ---------------------------- | -------------------------------------------------------------------------------- | ------------------------ |
+| `--font-family`              | família tipográfica	                                                          | $font-family-text        |
+| `--font-size`                | tamanho da fonte	                                                              | $font-size-default       |
+| `--text-color-empty`         | cor do texto da propriedade labelChooseOption                                    | $color-neutral-light-30  |
+| `--color`                    | cor predominante (border)	                                                      | $color-neutral-dark-70   |
+| `--background`               | cor do background	                                                              | $color-neutral-light-05  |
+| `--padding-horizontal`       | tamanho do espaçamento interno das laterais	                                  | left, right: 0.5em (8px) |
+| `--padding-vertical`         | tamanho do espaçamento interno na vertical (top, bottom)	                      | top, bottom: 0.7em (11px)|
+| `--text-color	`              | cor do texto	                                                                  | $color-neutral-dark-90   |
+| `--color-hover`              | cor predominante (border) no estado hover                                        | $color-action-hover      |
+| `--background-hover`         | cor do background no estado hover                                                | $color-brand-01-lightest |
+| `--color-focused`            | cor predominante (border) no estado focus                                        | $color-action-default    |  
+| `--outline-color-focused`    | cor do outline no estado focus	                                                  | $color-action-focus      |
+| `--color-disabled	`          | cor predominante (border) no estado disabled	                                  | $color-action-disabled   |
+| `--background-disabled`      | cor do background no estado disabled	                                          | $color-neutral-light-20  |
 
 
 </TabItem>

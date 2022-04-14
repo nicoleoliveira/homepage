@@ -43,6 +43,157 @@ O modal é um componente tem a função de exibir informações de alta relevân
 Podem ser usados para visualizar, inserir ou editar informações, confirmar uma ação, etc. Porém, por interromper uma atividade, devem ser usados com moderação e sempre para casos em que auxiliem a conclusão da tarefa principal.
 
 
+### Anatomia
+
+Os cenários de uso do modal são bastante variados. Para trazer uma padronização, mas ainda assim trazendo flexibilidade para os diversos cenários de utilização, o modal foi estruturado de forma modular, e cada parte possui suas particularidades, detalhadas a seguir:
+
+
+#### Estrutura macro
+
+Em uma visão macro, o modal é composto pelas seguintes partes:
+
+<img
+  src={modal_anatomy_macro}
+  alt="Modal com as 5 partes macro sinalizadas: header, content, footer, base e overlay"
+/>
+
+1. **Header**: Área reservada para a identificação do modal e saída (padrão)
+2. **Content**: Área reservada para o conteúdo, variável de acordo com a necessidade
+3. **Footer** *(opcional)*: área destinada a ações, quando houver.
+4. **Base**: forma que “emoldura” o conteúdo do componente
+5. **Overlay**: fundo que encobre o conteúdo da página, trazendo a prioridade para o modal
+
+Dessas partes, apenas o *footer* é um elemento opcional, pois é possível ter um modal sem nenhuma ação.  As demais partes possuem suas particularidades, mas sempre irão estar presentes nesse componente de alguma forma.
+
+
+#### Header
+
+No header, apenas o *icon* é um elemento opcional, os demais elementos são padrão do componente.
+
+<img
+  src={modal_anatomy_header}
+  alt="Header com 4 partes sinalizadas: icon, title, close e divider"
+/>
+
+1. **Icon** *(opcional)*: ícone para reforço do tipo de mensagem, para modais de feedback, como erro, alerta.
+2. **Title**: Título de identificação do modal
+3. **Close**: botão de fechamento padrão
+4. **Divider**: linha divisória entre o header e o content
+
+
+No UI Kit, há disponível o header na variação *default* e *with icon*.
+
+<img
+  src={modal_types_header}
+  alt="Variações de header no UI Kit: default e with icon"
+/>
+
+No código, o header está com a estrutura default, e o *icon* precisa ser adicionado, de acordo com a biblioteca de ícones adotada pela marca. Consulte as orientações de desenvolvimento.
+
+
+#### Content
+
+O *content* é apenas uma área reservada no modal. Não há conteúdo definido, sendo construído conforme a necessidade, pois os cenários de utilização são inúmeros.
+
+
+#### Footer
+
+O footer não é obrigatório na estrutura macro do modal, mas ao incluir, possui sempre duas partes:
+
+<img
+  src={modal_anatomy_footer}
+  alt="Footer com 2 partes sinalizadas: divider e action"
+/>
+
+1. **Divider**: linha divisória entre o footer e o content
+2. **Action**: área para ações previstas, com 1-3 ações
+
+
+No UI Kit, há disponível o footer nas variações: *1 action*, *2 action*, *3 action* e *danger* (para ações destrutivas).
+
+<img
+  src={modal_types_footer}
+  alt="As 4 variações de footer no UI Kit, variando a quantidade de ações"
+/>
+
+No código, há a área do footer prevista, porém é preciso adicionar os botões e ícone junto à label (caso haja), de acordo com a biblioteca de ícones adotada pela marca. Consulte as orientações de desenvolvimento.
+
+
+
+### Tamanhos
+
+O modal contém 5 variações de tamanho, que dizem respeito à sua **largura**:
+
+- `sm`, `md`, `lg`, `xl`: larguras pré-estabelecidas;
+- `auto`: largura ajustável, de acordo com o conteúdo.
+
+
+<img
+  src={modal_sizes}
+  alt="As 4 variações de footer no UI Kit, variando a quantidade de ações"
+/>
+
+A altura do modal, independente do tamanho, é sempre variável, conforme detalhado na seção [comportamento](https://www.notion.so/Modal-307002dc72a74960a5afea92edefad38).
+
+A variação `md` é o tamanho padrão.
+
+
+### Responsividade
+
+Cada tamanho de modal possui uma largura pré-estabelecida, que se ajusta de acordo com o dispositivo em que está sendo acessado.
+
+A porcentagem de largura nos menores dispositivos é de 90%, e, conforme aumenta o breakpoint, essa porcentagem diminui, para garantir uma proporcionalidade e manter sempre visível a tela à qual aquela modal está relacionado.
+
+
+|                    | brekpoint 1 - phone 📱 | brekpoint 2 - tablet  | brekpoint 3 -small desktop 💻 | brekpoint 4 - large desktop 🖥️ |
+|--------------------|-----------------------|-----------------------|------------------------------|-------------------------------|
+| **sm**             | 90%                   | 80%                   | 40%                          | 40%                           |
+| **md** *(default)* | 90%                   | 80%                   | 50%                          | 50%                           |
+| **lg**             | 90%                   | 80%                   | 60%                          | 60%                           |
+| **xl**             | 90%                   | 80%                   | 70%                          | 70%                           |
+| **auto**           | 90%                   | auto (max-widht: 80%) | auto (max-widht: 70%)        | auto (max-widht: 70%)         |
+
+
+:::note
+Nesse primeiro momento, o componente modal não está atrelado ao grid system.
+:::
+
+
+### Comportamento
+
+#### Altura variável
+
+A altura do modal é variável, de acordo com o conteúdo na área *Content.* Após atingir a altura máxima, é gerado uma rolagem vertical.
+
+- A altura mínima é a somatória do *Header* + *Content*
+- Altura máxima estabelecida: 80% da tela
+
+#### Rolagem vertical
+
+A rolagem no modal acontece apenas verticalmente, e acontece sempre que o conteúdo atingir a altura máxima estabelecida. Nesses casos:
+
+- **Header**: fica fixo na parte superior do modal, para manter sempre visível a identificação e disponível a possibilidade de fechar;
+- **Footer** (quando houver): fica fixo na parte inferior do modal, para que as ações possíveis fiquem visíveis;
+- A rolagem acontece apenas na parte do conteúdo.
+
+<img
+  src={modal_scroll}
+  alt="Exemplo de modal com bastante texto, com rolagem na área de conteúdo"
+/>
+
+
+#### Fechamento do modal
+
+As possibilidades de fechamento do modal são:
+
+- **Botão close**:  através do botão *close* no *header*, a qualquer momento;
+- **Overlay**: clique no *overlay*;
+- **Esc**: através da tecla `esc` no teclado;
+- **Ação no footer**: quando houver no footer uma ação como “cancelar”.
+
+
+## Boas práticas
+
 
 </TabItem>
 

@@ -17,7 +17,7 @@ module.exports = {
     { 
           type: 'category',
           label: 'Cores',
-           items: ['foundation/color','foundation/style-guide/colors'],
+           items: ['foundation/color','foundation/color-good-practices'],
   },
   'foundation/typo',
   'foundation/spacing',

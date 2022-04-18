@@ -145,7 +145,7 @@ Cada tamanho de modal possui uma largura pré-estabelecida, que se ajusta de aco
 A porcentagem de largura nos menores dispositivos é de 90%, e, conforme aumenta o breakpoint, essa porcentagem diminui, para garantir uma proporcionalidade e manter sempre visível a tela à qual aquela modal está relacionado.
 
 
-|                    | brekpoint 1 - phone 📱 | brekpoint 2 - tablet  | brekpoint 3 -small desktop 💻 | brekpoint 4 - large desktop 🖥️ |
+|                    | brekpoint 1 - _phone_ 📱 | brekpoint 2 - _tablet_  | brekpoint 3 - _small desktop_ 💻 | brekpoint 4 - _large desktop_ 🖥️ |
 |--------------------|-----------------------|-----------------------|------------------------------|-------------------------------|
 | **sm**             | 90%                   | 80%                   | 40%                          | 40%                           |
 | **md** *(default)* | 90%                   | 80%                   | 50%                          | 50%                           |
@@ -193,6 +193,52 @@ As possibilidades de fechamento do modal são:
 
 
 ## Boas práticas
+
+O componente foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web ([WCAG 2.1](https://www.w3.org/TR/WCAG21/)). Também foi estruturado com base em padrões de usabilidade para contribuir com uma boa experiência. Por isso, ao aplicar esse componente, é muito importante que sejam levados em consideração alguns critérios e práticas:
+
+### Uso
+
+- Use modais com moderação, apenas em momentos críticos ou de alta relevância. Eles são essencialmente uma interrupção;
+- Use modal quando for necessário uma resposta imediata por parte do usuário, por exemplo solicitar a inclusão de informações cruciais para continuar o processo atual;
+- Modais podem ser utilizados como uma forma de atrito em situações que requerem maior atenção, como uma maneira de prevenção de erros;
+- Evite usar modais em contextos com processos críticos, como fluxos de checkout;
+- Evite usar modais para apresentar informações não essenciais, ou seja, com baixa relevância para o fluxo atual;
+
+<BestPracticesComponent
+  doImg={modal_do_1}
+  doAlt="Toaster de sucesso, com mensagem 'Item adicionado na lista'. "
+  doDescription="Para feedbacks de baixa relevância, utilize o toaster ao invés do modal. Use modais com moderação."
+  dontImg={modal_dont_1}
+  dontAlt="Modal com Título “Sucesso”, texto 'Item adicionado na lista' e ação 'fechar' "
+  dontDescription="Modais são essencialmente interruptivos. Não use para exibir informações de baixa relevância ou para dar feedbacks a cada ação."
+/>
+
+- O modal sempre precisa ter um título, que deve identificar de forma clara do que se trata aquela intervenção;
+- Use modal para confirmar decisões. Descreva com clareza e objetividade a ação que está sendo tomada e, se possível, explique suas consequências. Deixe claro quando a ação for destrutiva ou irreversível;
+
+
+<BestPracticesComponent
+  doImg={modal_do_2}
+  doAlt="Footer do modal com duas ações: 'incluir novo contato'(principal) e 'Cancelar'(secundária)"
+  doDescription="Quando incluir ações, descreva de forma clara o resultado da ação que será tomada."
+  dontImg={modal_dont_2}
+  dontAlt="Footer do modal com duas ações: Sim (principal) e Não (secundária)"
+  dontDescription="Não use textos vagos ou genéricos para identificar as ações, pois isso dificulta o processo de decisão."
+/>
+
+
+
+
+### Acessibilidade tratada no componente
+
+- O botão de saída no header contém uma descrição ”fechar”;
+- O foco é mantido dentro do modal, até que ele seja fechado;
+- O conteúdo da página do modal fica preservado, não sofrendo alterações, como scroll do conteúdo por trás do modal enquanto ele estiver aberto;
+- O foco retorna ao último elemento focado na tela principal;
+- Os elementos interativos possuem área clicável de pelo menos 44px x 44px ([WCAG 2.5.5: Target Size](https://www.w3.org/WAI/WCAG21/Understanding/target-size));
+- Permite interação via teclado ([WCAG 2.1.1: Keyboard](https://www.w3.org/WAI/WCAG21/Understanding/keyboard));
+- O componente pode ser fechado pelo usuário, a qualquer momento  ([WCAG 2.2.4: Interruptions](https://www.w3.org/WAI/WCAG21/Understanding/interruptions));
+- Uso de controles padrões HTML, o que permite a identificação por tecnologias assistivas.([WCAG 4.1.2: Name, Role, Value](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value)).
 
 
 </TabItem>

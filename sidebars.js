@@ -22,6 +22,7 @@ module.exports = {
   'foundation/typo',
   'foundation/spacing',
   'foundation/icon',
+  'foundation/image',
   'foundation/grid',
   ],
   about: [

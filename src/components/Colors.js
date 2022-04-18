@@ -1,34 +1,34 @@
 const designTokens = [
     {
-        name: 'color-feedback-positive-lightest',
+        name: '--color-feedback-positive-lightest',
         token: '#DEF7ED'
     },
     {
-        name: 'color-feedback-positive-lighter',
+        name: '--color-feedback-positive-lighter',
         token: '#7ECEAD'
     },
     {
-        name: 'color-feedback-positive-light',
+        name: '--color-feedback-positive-light',
         token: '#41B483'
     },
     {
-        name: 'color-feedback-positive-base',
+        name: '--color-feedback-positive-base',
         token: '#107048'
     },
     {
-        name: 'color-feedback-positive-base',
+        name: '--color-feedback-positive-base',
         token: '#107048'
     },
     {
-        name: 'color-feedback-positive-dark',
+        name: '--color-feedback-positive-dark',
         token: '#0F5236'
     },
     {
-        name: 'color-feedback-positive-darker',
+        name: '--color-feedback-positive-darker',
         token: '#083A25'
     },
     {
-        name: 'color-feedback-positive-darkest',
+        name: '--color-feedback-positive-darkest',
         token: '#002415'
     },
 ];
@@ -43,8 +43,9 @@ export default class ColorsComponent extends React.Component {
         return (
  
             <tr>
-                <td>{row.name}</td> 
-                <td style={style}>{row.token}</td>
+                <td>{row.name}</td>
+                <td style={style}></td> 
+                <td>{row.token}</td>
             </tr>
         )
       }
@@ -54,7 +55,8 @@ export default class ColorsComponent extends React.Component {
         <table>
             <thead>
                 <th>Nome</th>
-                <th>Token</th>
+                <th>Amostra</th>
+                <th>HEX</th>
             </thead>
             <tbody>
                 {designTokens.map(this.renderRow)}

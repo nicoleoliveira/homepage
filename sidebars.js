@@ -24,6 +24,7 @@ module.exports = {
   'foundation/icon',
   'foundation/image',
   'foundation/grid',
+  'foundation/logo',
   ],
   about: [
     'about/intro',

@@ -124,7 +124,7 @@ const designTokensInfo = [
 
 import React from 'react';
 
-export default class ColorsComponentPositive extends React.Component {
+class ColorsComponentPositive extends React.Component {
     renderRow(row){
         const style = {
             backgroundColor: row.token
@@ -152,4 +152,97 @@ export default class ColorsComponentPositive extends React.Component {
         </table>
         );
     }
+}
+
+class ColorsComponentNegative extends React.Component {
+    renderRow(row){
+        const style = {
+            backgroundColor: row.token
+        };
+        return (
+ 
+            <tr>
+                <td>{row.name}</td>
+                <td style={style}></td> 
+                <td>{row.token}</td>
+            </tr>
+        )
+      }
+    render() {
+        return (
+        <table>
+            <thead>
+                <th>Token</th>
+                <th>Amostra</th>
+                <th>HEX</th>
+            </thead>
+            <tbody>
+                {designTokensNegative.map(this.renderRow)}
+            </tbody>
+        </table>
+        );
+    }
+}
+
+class ColorsComponentWarning extends React.Component {
+    renderRow(row){
+        const style = {
+            backgroundColor: row.token
+        };
+        return (
+ 
+            <tr>
+                <td>{row.name}</td>
+                <td style={style}></td> 
+                <td>{row.token}</td>
+            </tr>
+        )
+      }
+    render() {
+        return (
+        <table>
+            <thead>
+                <th>Token</th>
+                <th>Amostra</th>
+                <th>HEX</th>
+            </thead>
+            <tbody>
+                {designTokensWarning.map(this.renderRow)}
+            </tbody>
+        </table>
+        );
+    }
+}
+class ColorsComponentInfo extends React.Component {
+    renderRow(row){
+        const style = {
+            backgroundColor: row.token
+        };
+        return (
+ 
+            <tr>
+                <td>{row.name}</td>
+                <td style={style}></td> 
+                <td>{row.token}</td>
+            </tr>
+        )
+      }
+    render() {
+        return (
+        <table>
+            <thead>
+                <th>Token</th>
+                <th>Amostra</th>
+                <th>HEX</th>
+            </thead>
+            <tbody>
+                {designTokensInfo.map(this.renderRow)}
+            </tbody>
+        </table>
+        );
+    }
+}
+
+export {
+    ColorsComponentPositive, ColorsComponentNegative, ColorsComponentWarning, ColorsComponentInfo
 }

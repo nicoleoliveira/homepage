@@ -1,4 +1,4 @@
-const designTokens = [
+const designTokensPositive = [
     {
         name: '--color-feedback-positive-lightest',
         token: '#DEF7ED'
@@ -10,10 +10,6 @@ const designTokens = [
     {
         name: '--color-feedback-positive-light',
         token: '#41B483'
-    },
-    {
-        name: '--color-feedback-positive-base',
-        token: '#107048'
     },
     {
         name: '--color-feedback-positive-base',
@@ -33,9 +29,102 @@ const designTokens = [
     },
 ];
 
+const designTokensNegative = [
+    {
+        name: '--color-feedback-negative-lightest',
+        token: '#F6E6E5'
+    },
+    {
+        name: '--color-feedback-negative-lighter',
+        token: '#E3AEAB'
+    },
+    {
+        name: '--color-feedback-negative-light',
+        token: '#D58581'
+    },
+    {
+        name: '--color-feedback-negative-base',
+        token: '#BE3E37'
+    },
+    {
+        name: '--color-feedback-negative-dark',
+        token: '#9B2D27'
+    },
+    {
+        name: '--color-feedback-negative-darker',
+        token: '#72211D'
+    },
+    {
+        name: '--color-feedback-negative-darkest',
+        token: '#4A1512'
+    },
+];
+
+const designTokensWarning = [
+    {
+        name: '--color-feedback-warning-lightest',
+        token: '#FCF6E3'
+    },
+    {
+        name: '--color-feedback-warning-lighter',
+        token: '#F7DD97'
+    },
+    {
+        name: '--color-feedback-warning-light',
+        token: '#F1CD6A'
+    },
+    {
+        name: '--color-feedback-warning-base',
+        token: '#EFBA2A'
+    },
+    {
+        name: '--color-feedback-warning-dark',
+        token: '#D8A20E'
+    },
+    {
+        name: '--color-feedback-warning-darker',
+        token: '#705200'
+    },
+    {
+        name: '--color-feedback-warning-darkest',
+        token: '#473400'
+    },
+];
+
+const designTokensInfo = [
+    {
+        name: '--color-feedback-info-lightest',
+        token: '#E3E9F7'
+    },
+    {
+        name: '--color-feedback-info-lighter',
+        token: '#B0C1E8'
+    },
+    {
+        name: '--color-feedback-info-light',
+        token: '#7996D7'
+    },
+    {
+        name: '--color-feedback-info-base',
+        token: '#23489F'
+    },
+    {
+        name: '--color-feedback-info-dark',
+        token: '#173782'
+    },
+    {
+        name: '--color-feedback-info-darker',
+        token: '#0F2557'
+    },
+    {
+        name: '--color-feedback-info-darkest',
+        token: '#081536'
+    },
+];
+
 import React from 'react';
 
-export default class ColorsComponent extends React.Component {
+export default class ColorsComponentPositive extends React.Component {
     renderRow(row){
         const style = {
             backgroundColor: row.token
@@ -50,16 +139,15 @@ export default class ColorsComponent extends React.Component {
         )
       }
     render() {
-        // return <div>Olá <ani-button>button</ani-button>!</div>;
         return (
         <table>
             <thead>
-                <th>Nome</th>
+                <th>Token</th>
                 <th>Amostra</th>
                 <th>HEX</th>
             </thead>
             <tbody>
-                {designTokens.map(this.renderRow)}
+                {designTokensPositive.map(this.renderRow)}
             </tbody>
         </table>
         );

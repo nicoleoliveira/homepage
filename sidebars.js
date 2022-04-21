@@ -19,7 +19,11 @@ module.exports = {
           label: 'Cores',
            items: ['foundation/color','foundation/color-good-practices'],
   },
-  'foundation/typo',
+  { 
+    type: 'category',
+    label: 'Tipografia',
+     items: ['foundation/typo','foundation/typo-styles'],
+},
   'foundation/spacing',
   'foundation/icon',
   'foundation/image',

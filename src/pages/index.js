@@ -6,18 +6,21 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
-        <div className="intro">
-        <h1>Animalia Design System</h1>
-          <p>Design system open source da TOTVS, que nasceu com o objetivo de melhorar a performance no desenvolvimento de aplicações corporativas, facilitando a comunicação entre designers e desenvolvedores</p>
+        <div className={styles.intro}>
+        <h1>Bem-vindo ao Animalia Design System</h1>
+          <p>Design system open source da TOTVS, que nasceu com o objetivo de melhorar a performance 
+            no desenvolvimento de aplicações corporativas, facilitando a 
+            comunicação entre designers e desenvolvedores</p>
            <div className={styles.buttons}>
             <Link
-              className="ani-button-primary"
-             to="/docs/getting-started">
+              className="ani-button-secondary"
+             to="/docs/about/getting-started">
              Começando
             </Link>
           </div>
@@ -32,7 +35,7 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Design system open source da TOTVS">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

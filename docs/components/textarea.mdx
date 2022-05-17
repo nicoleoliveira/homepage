@@ -94,19 +94,23 @@ A label é tratada como um componente à parte no Design System (`ani-label`). V
 
 :::
 
-## Comportamento
+### Comportamento
 
-- O componente pode ser redimensionado através da marcação no canto inferior direito (resize). Por padrão, possui uma altura estabelecida de 3 linhas.
-
-- Quando em foco, o cursor fica posicionado após o último caractere inserido no input text.
-
-#### Help text e text error
-- Caso o campo já possua **help text**, o **text error** o substituirá, permanecendo em tela até que seja feita **uma nova validação**, conforme o método necessário para o contexto ( ao tirar o foco do componente, ao submeter, etc). O apoio para que o usuário possa corrigir o preenchimento deverá ser trabalhado na mensagem de erro.
+- O componente pode ser redimensionado através da marcação no canto inferior direito(resize). Por padrão, possui uma altura estabelecida de 3 linhas.
+- Os elementos **label, help text** e **text error** acompanham e se limitam à largura do **text area** dentro do layout. Caso haja na label o indicativo de obrigatoriedade do campo (required text), esse elemento permanece ao lado do texto da label.
 
 
-## Boas práticas
+### Boas práticas
 
+#### Fazer
 
+- O campo de entrada deve ter tamanho grande o suficiente para que a maioria do conteúdo inserido fique visível (ou permitir que o usuário ajuste o tamanho);
+- Mantenha a label do campo sempre visível, para permitir que o usuário identifique corretamente o campo, mesmo após conteúdo inserido;
+- Use label com textos autoexplicativos, com instruções claras e objetivas, para que o usuário identifique com facilidade qual informação precisa ser inserida
+
+#### Não Fazer
+
+- Nunca use o placeholder para substituir a label do componente. Use o placeholder para trazer mais contexto sobre o tipo de informação que precisa ser adicionada.
 
 
 

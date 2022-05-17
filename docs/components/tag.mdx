@@ -1,0 +1,72 @@
+---
+id: tag
+sidebar_label: Tag
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+
+# Tag
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+
+## Visão geral
+
+Este componente é indicado para os casos em que é necessário informar, rotular, chamar atenção ou categorizar itens. Permitem um rápido reconhecimento pelo uso de palavras-chave, ícones ou cores.
+
+As tags ajudam a destacar informações importantes e apoiam na categorização, também rotulam visualmente os itens com pequenas quantidades de informações ou destacam o status, geralmente com palavras-chave concisas que ajudam a identificar os itens. Podem ou não conter ícones para apoiar na identificação da tag.
+
+
+### Tipos
+
+Pensando nos diversos cenários de uso, há duas categorias de tags: **leitura** e **interativa**.
+
+- **Tag de leitura:** traz a informação de forma estática, sem possibilitar qualquer tipo de interação;
+- **Tag interativa:** traz a informação e possui interação em si, podendo ser removida, por exemplo.
+
+
+### Boas práticas
+
+As tags (leitura e interativa) são estruturadas com base em padrões de usabilidade para contribuir com uma boa experiência. Por isso, ao aplicar esse componente, é muito importante que sejam levados em consideração alguns critérios e práticas:
+
+- Use tags quando o conteúdo for mapeado para várias categorias e o usuário precisar de uma maneira de diferenciá-las.
+- A label da tag costuma ser sempre um adjetivo ou substantivo, não um verbo.
+- As tags devem sempre incluir uma label. Eles podem representar termos de pesquisa, filtros ou palavras-chave.
+- Não use apenas a cor para transmitir informações porque não é acessível. Se você usar a mesma tag em mais de um lugar, certifique-se de manter a cor consistente.
+- As tags podem aumentar a quantidade de ruído visual em uma tela, principalmente quando combinadas com outros elementos visuais, portanto, use-as com moderação.
+- Não misture tags interativas e estáticas.Depois de estabelecer um padrão de comportamento das tags, os usuários sempre esperam esse comportamento.
+- A tag nunca deve ter mais de uma linha, por isso temos que usar termos curtos e claros.
+
+
+</TabItem>
+
+ <TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+ <TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+</Tabs>

@@ -12,6 +12,8 @@ import LiveDemoComponent from './helpers/components/live-demo.tsx';
 import WebComponentReact from './../../src/components/WebComponent.js';
 
 import iconSize from './img/icon/icon-size.jpg';
+import icon_do_1 from './img/icon/icon-do-1.jpg';
+import icon_dont_1 from './img/icon/icon-dont-1.jpg';
 
 # Icon
 
@@ -45,9 +47,27 @@ O componente possui três tamanhos diferentes: *Small,* *Medium* e *Large*. O ta
   alt="Três variações de tamanho para o icon dispostas lado a lado."
 />
 
-Os componentes são formados por tokens, sendo estes propriedades de estilo que definem como será estruturado e estilizado. 
+Os componentes são formados por tokens, sendo estes propriedades de estilo que definem como será estruturado e estilizado. Os tokens que podem ser alterados pelas marcas, podem ser conferidos na seção de [propriedades customizáveis](#propriedades-customizáveis).
 
-Os tokens que podem ser alterados pelas marcas, podem ser conferidos na seção de [propriedades customizáveis](#propriedades-customizáveis).
+
+## Boas práticas
+
+O componente foi projetado para atender os requisitos das Diretrizes de Acessibilidade para Conteúdo Web (WCAG 2.1). Também foi estruturado com base em padrões de usabilidade para contribuir com uma boa experiência. Por isso, ao aplicar esse componente, é muito importante que sejam levados em consideração alguns critérios e práticas:
+
+### Cor
+
+- Use o componente Icon na mesma cor da label que o acompanha. 
+
+<BestPracticesComponent
+  doImg={icon_do_1}
+  doAlt="Botão com ícone à esquerda e rótulo “Editar registro” em cores iguais."
+  doDescription="O componente icon deve sempre seguir a mesma cor do rótulo ou cor do contexto inserido."
+  dontImg={icon_dont_1}
+  dontAlt="Botão com ícone à esquerda e rótulo “Editar registro” em cores diferentes."
+  dontDescription="Não use o componente icon em cores diferentes do contexto inserido."
+/>
+
+
 </TabItem>
 
 <TabItem value="dev">

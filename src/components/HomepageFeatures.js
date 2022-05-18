@@ -4,32 +4,31 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
+    tagline: 'Acessível',
     title: 'Acessível e inclusivo',
     Svg: require('../../static/img/img1.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Acessibilidade
       </>
     ),
   },
   {
+    tagline: 'Acessível',
     title: 'Colaborativo',
     Svg: require('../../static/img/img2.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Colaboração
       </>
     ),
   },
-  {
+  { tagline: 'Acessível',
     title: 'Impulsionar negócios',
     Svg: require('../../static/img/img3.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+       Negócio
       </>
     ),
   },
@@ -41,9 +40,9 @@ function Feature({Svg, title, description}) {
       <div className="text--center">
         <Svg className={styles.featureSvg} alt={title} />
       </div>
-      <div className="text--center padding-horiz--md">
+      <div className="text--left">
+        <p className={styles.tagline}>{description}</p>
         <h3>{title}</h3>
-        <p>{description}</p>
       </div>
     </div>
   );

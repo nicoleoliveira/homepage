@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
+import styles from './HomepageHighlight.module.css';
 
 const FeatureList = [
   {
@@ -53,6 +53,7 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
+    <h3>Componentes</h3>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

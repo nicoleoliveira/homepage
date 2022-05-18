@@ -34,7 +34,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`Bem vindo ao ${siteConfig.title}`}
       description="Design system open source da TOTVS">
       <HomepageHeader />
       <main>

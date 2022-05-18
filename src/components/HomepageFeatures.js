@@ -5,7 +5,7 @@ import styles from './HomepageFeatures.module.css';
 const FeatureList = [
   {
     title: 'Acessível e inclusivo',
-    Svg: require('../../static/img/undraw_Project_feedback_re_cm3l.svg').default,
+    Svg: require('../../static/img/img1.svg').default,
     description: (
       <>
         Docusaurus was designed from the ground up to be easily installed and
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Colaborativo',
-    Svg: require('../../static/img/undraw_Development_re_g5hq.svg').default,
+    Svg: require('../../static/img/img2.svg').default,
     description: (
       <>
         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     title: 'Impulsionar negócios',
-    Svg: require('../../static/img/undraw_Growth_analytics_re_pyxf.svg').default,
+    Svg: require('../../static/img/img3.svg').default,
     description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can
@@ -37,7 +37,7 @@ const FeatureList = [
 
 function Feature({Svg, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} alt={title} />
       </div>

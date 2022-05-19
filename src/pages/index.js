@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
+import HomepageHighlight from '../components/HomepageHighlight';
 
 
 function HomepageHeader() {
@@ -34,7 +35,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`Bem vindo ao ${siteConfig.title}`}
       description="Design system open source da TOTVS">
       <HomepageHeader />
       <main>

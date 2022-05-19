@@ -4,7 +4,7 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    tagline: 'Acessível',
+    
     title: 'Acessível e inclusivo',
     Svg: require('../../static/img/img1.svg').default,
     description: (
@@ -14,7 +14,6 @@ const FeatureList = [
     ),
   },
   {
-    tagline: 'Acessível',
     title: 'Colaborativo',
     Svg: require('../../static/img/img2.svg').default,
     description: (
@@ -23,7 +22,7 @@ const FeatureList = [
       </>
     ),
   },
-  { tagline: 'Acessível',
+  { 
     title: 'Impulsionar negócios',
     Svg: require('../../static/img/img3.svg').default,
     description: (
@@ -42,7 +41,7 @@ function Feature({Svg, title, description}) {
       </div>
       <div className="text--left">
         <p className={styles.tagline}>{description}</p>
-        <h3>{title}</h3>
+        <h3 className={styles.headline02}>{title}</h3>
       </div>
     </div>
   );
@@ -53,6 +52,14 @@ export default function HomepageFeatures() {
     <section className={styles.features}>
       <div className="container">
         <div className="row">
+           <div className={clsx('col col--3')}>
+           <div className={styles.presentation}>
+             <p className={styles.tagline}>Principios</p>
+              <h3 className={styles.headline01}>Principios do Animalia
+Design System</h3>
+              <p>Os princípios são nossa direção, são eles que orientam todas as diretrizes e decisões em relação ao design system e a tudo que ele entrega.</p>
+          </div>
+        </div>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}

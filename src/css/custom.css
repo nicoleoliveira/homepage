@@ -36,6 +36,7 @@
   --ifm-code-font-size: 95%;
   --ifm-alert-color: black;
   --ifm-font-family-base: 'Inter', sans-serif;
+  
   font-size: 1rem;
 }
 
@@ -73,5 +74,8 @@ html[data-theme='dark'] {
   --ifm-color-primary-dark: var(--ifm-color-primary-lighter);
   --ifm-color-neutral-light:var(--ifm-color-neutral-dark);
   --ifm-color-neutral-light-00:var(--ifm-color-neutral-dark);
+  --ifm-background-color:var(--ifm-color-neutral-dark-90);
+  --ifm-navbar-background-color:var(--ifm-color-neutral-dark-80);
+  --ifm-navbar-link-hover-color:var(--ifm-color-primary-light);
   /* any other colors you wish to overwrite */
 }

@@ -7,6 +7,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 import tooltip_anatomy from './img/tooltip/tooltip-anatomy.png';
+import tooltip_position from './img/tooltip/tooltip-position.png';
+import tooltip_position_example from './img/tooltip/tooltip-position-example.png';
 
 # Tooltip
 
@@ -26,13 +28,14 @@ import tooltip_anatomy from './img/tooltip/tooltip-anatomy.png';
 
 O componente `tooltip`  tem a função de apresentar ajuda contextual ou informação adicional sobre um elemento em tela.
 
-## Anatomia
+### Anatomia
 
-Estruturalmente, o `tooltip` é composto por:
+Estruturalmente, o tooltip é composto por:
 
-![Alt: Tooltip com as 3 partes sinalizadas: label, background e arrow](Tooltip%20e33755d3e6cc4ddaa4b6accf5643d823/Untitled.png)
-
-Alt: Tooltip com as 3 partes sinalizadas: label, background e arrow
+<img
+src={tooltip_anatomy}
+alt="Tooltip com as 3 partes sinalizadas: label, background e arrow"
+/>
 
 **1.** Label
 
@@ -40,41 +43,46 @@ Alt: Tooltip com as 3 partes sinalizadas: label, background e arrow
 
 **3.** Arrow
 
-O componente é estruturado e estilizado por meio dos design tokens. Os tokens que podem ser alterados pelas marcas estão listados na seção de [propriedades customizáveis](https://www.notion.so/Toaster-895f24fb8fbb42ad9b1a32f902c0d0e0).
+O componente é estruturado e estilizado por meio dos design tokens. Os tokens que podem ser alterados pelas marcas estão listados na seção de [propriedades customizáveis](#propriedades-customizáveis)
 
-### Variações
+### Variações (Posicionamento)
 
-O componente tooltip possui doze variações de posicionamento, sendo o posicionamento padrão (bottom).
+O componente tooltip possui doze variações de posicionamento, sendo que o posicionamento padrão é o **bottom.**
 
-![Alt: As 12 variações do componente Tooltip: bottom, bottom-left, bottom-right, right, right-top, top-left, top, top-right, left-top, left, left-bottom, bottom-right.](Tooltip%20e33755d3e6cc4ddaa4b6accf5643d823/Untitled%201.png)
+<img
+src={tooltip_position}
+alt="As 12 variações do componente Tooltip: bottom, bottom-left, bottom-right, right, right-top, top-left, top, top-right, left-top, left, left-bottom, bottom-right."
+/>
 
-Alt: As 12 variações do componente Tooltip: bottom, bottom-left, bottom-right, right, right-top, top-left, top, top-right, left-top, left, left-bottom, bottom-right.
+A nomenclatura adotada se baseia na posição do tooltip em relação ao elemento ancorado.
+<img
+src={tooltip_position_example}
+alt="Tooltip bottom posicionado abaixo de um icone; Top, acima do icone; top-right e top left, acima do icone, variando o alinhamento."
+/>
 
-## **Boas práticas**
-
-A informação devem ser tão concisas e claras quanto possível. 
+## Boas práticas
 
 ### Faça
 
-- Ajudar as pessoas usuárias a entender o significado ou propósito do elementos em tela;
-- Fornecer informações adicionais para a conclusão de uma tarefa;
-- Fornecer conteúdo breve e útil.
+- Mantenha as informações tão concisas e claras quanto possível;
+- Ajude as pessoas usuárias a entender o significado ou propósito do elementos em tela;
+- Forneça informações adicionais para a conclusão de uma tarefa.
+
 
 ### Não faça
 
-- Informações importantes ou cruciais não devem sempre dentro do tooltip;
-- Não utilize o tootltip para passar uma mensagem de erro
-- Não obstrua informações importantes
-- Não coloque ações dentro de uma tooltip
+- Informações importantes ou cruciais não devem estar dentro do tooltip;
+- Não utilize o tootltip para passar uma mensagem de erro;
+- Não obstrua informações importantes;
+- Não coloque ações dentro de uma tooltip.
 
-### **Acessibilidade tratada no componente**
+### Acessibilidade tratada no componente
 
 Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas pelo proprietário do conteúdo. São elas:
 
 - Usar medidas relativas para possibilitar um zoom de até 200%, sem perda do conteúdo ou funcionalidade.([WCAG 1.4.4: Resize Text](https://www.w3.org/WAI/WCAG21/Understanding/resize-text));
-- Permitir que o usuário feche o tooltip. ([WCAG 2.2.4: Interruptions](https://www.w3.org/WAI/WCAG21/Understanding/interruptions.html));
-- Permitir a interação via teclado, através das teclas: Tab, Esc e setas. ([WCAG 2.1.1: Keyboard](https://www.w3.org/WAI/WCAG21/Understanding/keyboard));
-- A ordem de foco deve acontecer em sequência lógica. ([WCAG 2.4.3: Focus Order](https://www.w3.org/WAI/WCAG21/Understanding/focus-order))
+- Permitir a interação via teclado; ([WCAG 2.1.1: Keyboard](https://www.w3.org/WAI/WCAG21/Understanding/keyboard));
+- A ordem de foco acontece em sequência lógica e o conteúdo da tooltip deve ser lido após o elemento âncora; ([WCAG 2.4.3: Focus Order](https://www.w3.org/WAI/WCAG21/Understanding/focus-order))
 - Utilizar nome, função e valor adequadamente, pois estes parâmetros são utilizados por tecnologias assistivas para identificar os elementos da interface. ([WCAG 4.1.2: Name, Role, Value](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value)).
 
 

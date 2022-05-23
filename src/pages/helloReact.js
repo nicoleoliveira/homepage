@@ -10,7 +10,7 @@ function Hello() {
           justifyContent: 'center',
           alignItems: 'center',
           height: '50vh',
-          fontSize: '20px',
+          fontSize: '16px',
         }}>
         <p>
           Edit <code>pages/hello.js</code> and save to reload.

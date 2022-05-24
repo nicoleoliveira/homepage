@@ -1,0 +1,115 @@
+---
+id: dropdown
+sidebar_label: Dropdown
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import dropdown_anatomy from './img/dropdown/dropdown-anatomy.png';
+import dropdown_open from './img/dropdown/dropdown-open.png';
+import dropdown_states from './img/dropdown/dropdown-states.png';
+
+# Dropdown
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+
+## Visão geral
+
+O componente `dropdown` é o conjunto de um botão acionador com o componente `listbox`. É indicado para listar ações possíveis.
+
+:::note Componentes relacionados
+
+- [Listbox](/docs/components/listbox)
+- [Item-list](/docs/components/item-list)
+
+:::
+
+### Anatomia
+
+O `dropdown` é composto por *border, icon* e *label*. Também contém partes que são específicas de estados de interação, como *background* no estado hover / pressed e outline no estado focused.
+
+<img
+  src={dropdown_anatomy}
+  alt="Dropdown fechado e aberto com as 6 partes sinalizadas. Fechado: border, label e icon. Aberto: background, outline e listbox"
+/>
+
+**1.** Border
+
+**2.** Label
+
+**3.** Icon
+
+**4.** Background (hover/pressed)
+
+**5.** Outline (focused) 
+
+**6.** Listbox
+
+O componente é estruturado e estilizado por meio dos design tokens. Os tokens que podem ser alterados pelas marcas estão listados na seção de propriedades customizáveis.
+
+
+### Comportamento
+
+#### Abertura da lista
+
+- O posicionamento do componente `listbox` pode variar quando o componente está localizado em uma área da tela que impede a apresentação da lista.
+Por padrão abertura é alinhado à esquerda inferior, mas pode ter a variação de direita inferior, esquerda e direita superior.
+
+<img
+  src={dropdown_open}
+  alt="Dropdown com lista de opções aberta na parte inferior, alinhada à esquerda do botão de acionamento"
+/>
+
+## Acessibilidade tratada no componente
+
+Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas pelo proprietário do conteúdo. São elas:
+
+- Usar medidas relativas para possibilitar um zoom de até 200%, sem perda do conteúdo ou funcionalidade.([WCAG 1.4.4: Resize Text](https://www.w3.org/WAI/WCAG21/Understanding/resize-text))
+- Permitir a interação via teclado, através das teclas: Tab, Esc e setas. ([WCAG 2.1.1: Keyboard](https://www.w3.org/WAI/WCAG21/Understanding/keyboard))
+- A ordem de foco deve acontecer em sequência lógica. ([WCAG 2.4.3: Focus Order](https://www.w3.org/WAI/WCAG21/Understanding/focus-order))
+- Áreas de clique ou toque para elementos interativos devem ter pelo menos 44x44 pixels. ([WGAG 2.5.8: Target Size (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum))
+- Utilizar nome, função e valor adequadamente, pois estes parâmetros são utilizados por tecnologias assistivas para identificar os elementos da interface. ([WCAG 4.1.2: Name, Role, Value](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value))
+
+
+</TabItem>
+
+ <TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+ <TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+# Propriedades customizáveis
+
+O componente possui propriedades customizáveis, que possibilitam fazer alterações, de acordo com a marca ou o tema a ser utilizado. Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca. 
+
+O dropdown possui quadro estados, que se modificam de acordo com a interação do usuário, sendo eles: *Normal*, *Hover*, *Focus* e *Disabled*.
+
+<img
+  src={dropdown_states}
+  alt="Os estados de interação do dropdown, com as respectivas versões normal, hover, focus, pressed, focus item-list, disabled"
+/>
+
+</TabItem>
+
+</Tabs>

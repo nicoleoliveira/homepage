@@ -1,0 +1,87 @@
+---
+id: item-list
+sidebar_label: Item-list
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import itemlist_anatomy from './img/itemlist/itemlist-anatomy.png';
+import itemlist_states from './img/itemlist/itemlist-states.png';
+
+# Item-list
+
+<Tabs
+  defaultValue="design"
+  lazy
+  values={[
+    {label: 'Uso', value: 'design'},
+    {label: 'Desenvolvimento', value: 'dev'},
+    {label: 'Customização', value: 'custom-properties'},
+  ]}>
+
+  <TabItem value="design">
+
+
+## Visão geral
+
+O componente `item-list` é a menor parte da lista de ação que compõem o componente `listbox`.
+
+### Anatomia
+
+O `item-list` é composto pela *label*. Também contém partes que são específicas de estados de interação, como *background* no estado hover.
+
+<img
+  src={itemlist_anatomy}
+  alt="Os estados de interação do item-list, com as respectivas versões normal, hover, focus, pressed, disabled."
+/>
+
+**1.** Label
+
+**2.** Outline (*focused*)
+
+**3.** Background (*hover*)
+
+O componente é estruturado e estilizado por meio dos design tokens. Os tokens que podem ser alterados pelas marcas estão listados na seção de propriedades customizáveis.
+
+
+## Acessibilidade tratada no componente
+
+Algumas diretrizes de acessibilidade já são tratadas no componente, internamente, e não podem ser alteradas pelo proprietário do conteúdo. São elas:
+
+- Usar medidas relativas para possibilitar um zoom de até 200%, sem perda do conteúdo ou funcionalidade.([WCAG 1.4.4: Resize Text](https://www.w3.org/WAI/WCAG21/Understanding/resize-text))
+- Áreas de clique ou toque para elementos interativos devem ter pelo menos 44x44 pixels. ([WGAG 2.5.8: Target Size (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum))
+- Utilizar nome, função e valor adequadamente, pois estes parâmetros são utilizados por tecnologias assistivas para identificar os elementos da interface. ([WCAG 4.1.2: Name, Role, Value](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value))
+
+
+</TabItem>
+
+ <TabItem value="dev">
+
+:::note Em construção  
+Conteúdo em desenvolvimento
+:::
+
+</TabItem>
+
+
+ <TabItem value="custom-properties">
+
+:::note Em construção 
+Conteúdo em desenvolvimento
+:::
+
+# Propriedades customizáveis
+
+O componente possui propriedades customizáveis, que possibilitam fazer alterações, de acordo com a marca ou o tema a ser utilizado. Com isso, garantimos uma consistência ao Design System, sem perder a identidade de cada marca. 
+
+O item-list possui quadro estados, que se modificam de acordo com a interação do usuário, sendo eles: *Normal*, *Hover*, *Focus, Pressed* e *Disabled*.
+
+<img
+  src={itemlist_states}
+  alt="Os estados de interação do item-list, com as respectivas versões normal, hover, focus, pressed, disabled."
+/>
+
+</TabItem>
+
+</Tabs>

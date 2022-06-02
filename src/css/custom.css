@@ -19,12 +19,24 @@
   --ifm-color-primary-light: #9898CD;
   --ifm-color-primary-lighter: #C2C2E5;
   --ifm-color-primary-lightest: #EBEBF5;
-  --ifm-color-neutral-light:#dddd;
-  --ifm-color-neutral-dark:#aaaa;
+  --ifm-color-neutral-light-00:#ffffff;
+  --ifm-color-neutral-light-05:#f9f9fa;
+  --ifm-color-neutral-light-10:#ececee;
+  --ifm-color-neutral-light-20:#d0d0d7;
+  --ifm-color-neutral-light-30:#b4b4c0;
+  --ifm-color-neutral-mid-40:#9191a1;
+  --ifm-color-neutral-mid-60:#69697c;
+  --ifm-color-neutral-dark-70:#515162;
+  --ifm-color-neutral-dark-80:#36364A;
+  --ifm-color-neutral-dark-90:#1D1D30;
+  --ifm-color-neutral-dark-95:#060613;
+  --ifm-color-neutral-light:var(--ifm-color-neutral-light-20);
+  --ifm-color-neutral-dark:var(--ifm-color-neutral-dark-80);
   --ifm-color-danger: rgb(251, 251, 157);
   --ifm-code-font-size: 95%;
   --ifm-alert-color: black;
   --ifm-font-family-base: 'Inter', sans-serif;
+  
   font-size: 1rem;
 }
 
@@ -33,8 +45,21 @@
   min-height: 44px;
   padding:8px;
   stroke-width: 0;
-  color:#ffff;
+  color:var(--ifm-color-neutral-light-00);
   border-radius: 4px;
+}
+.ani-button-secondary{
+  min-height: 44px;
+  padding:8px;
+  border: 1px var(--ifm-color-neutral-light-00) solid;
+  color:var(--ifm-color-neutral-light);
+  border-radius: 4px;
+}
+.ani-button-secondary:hover{
+  
+  color:var(--ifm-color-neutral-light);
+  text-decoration: none;
+
 }
 
 .docusaurus-highlight-code-line {
@@ -48,5 +73,9 @@ html[data-theme='dark'] {
   --ifm-color-primary: var(--ifm-color-primary-light);
   --ifm-color-primary-dark: var(--ifm-color-primary-lighter);
   --ifm-color-neutral-light:var(--ifm-color-neutral-dark);
+  --ifm-color-neutral-light-00:var(--ifm-color-neutral-dark);
+  --ifm-background-color:var(--ifm-color-neutral-dark-90);
+  --ifm-navbar-background-color:var(--ifm-color-neutral-dark-80);
+  --ifm-navbar-link-hover-color:var(--ifm-color-primary-light);
   /* any other colors you wish to overwrite */
 }

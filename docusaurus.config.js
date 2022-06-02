@@ -19,17 +19,19 @@ module.exports = {
   },
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
-  organizationName: 'ajtot', // Usually your GitHub org/user name.
-  projectName: 'homepage', // Usually your repo name.
-  url: 'https://ajtot.github.io.',
+  organizationName: 'animaliads', // Usually your GitHub org/user name.
+  projectName: 'animalia-doc', // Usually your repo name.
+  url: 'https://animaliads.github.io',
   baseUrl: '/',
   themeConfig: {
     navbar: {
       logo: {
         alt: 'Animalia DS Logo',
         src: 'img/logo.svg',
+        srcDark: 'img/logo_dark.svg',
       },
       items: [
+
         {
           type: 'doc',
           docId: 'about/intro',
@@ -50,12 +52,15 @@ module.exports = {
         },
         {
           type: 'doc',
-          docId: 'designtokens',
+          docId: 'designtokens/designtokens',
           position: 'right',
           label: 'Design Tokens',
         },
-   
-      
+        {
+          type: 'search',
+          position: 'right',
+        },
+    
        
      
         //{to: '/blog', label: 'Blog', position: 'left'},
@@ -67,46 +72,47 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Começando',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Desenvolvimento',
+              to: '/docs/about/getting-started',
+            },
+            {
+              label: 'Design',
+              to: '/docs/about/getting-started-design',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Links úteis',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Github',
+              href: 'https://github.com/animaliads',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Storybook (API)',
+              href: 'http://animaliads.io/?path=/docs/api-button--sample',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Figma Community',
+              href: 'https://www.figma.com/@animaliads',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Outros',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'Changelog',
+              to: '/docs/about/changelog',
             },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
+
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Animalia Design System 🦎.`,
     },
   },
   presets: [

@@ -1,114 +1,110 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Animalia DS',
-  tagline: 'Design System da TOTVS',
-  onBrokenLinks: 'log',
+  title: "Animalia DS",
+  tagline: "Design System da TOTVS",
+  onBrokenLinks: "log",
   i18n: {
-    defaultLocale: 'pt',
-    locales: ['en', 'pt'],
+    defaultLocale: "pt",
+    locales: ["en", "pt"],
     localeConfigs: {
       en: {
-        label: 'English',
-        direction: 'ltr',
+        label: "English",
+        direction: "ltr",
       },
       pt: {
-        label: 'Português',
-        direction: 'ltr',
-      }
-    }
+        label: "Português",
+        direction: "ltr",
+      },
+    },
   },
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.png',
-  organizationName: 'animaliads', // Usually your GitHub org/user name.
-  projectName: 'animalia-doc', // Usually your repo name.
-  url: 'https://animaliads.github.io',
-  baseUrl: '/',
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.png",
+  organizationName: "animaliads", // Usually your GitHub org/user name.
+  projectName: "animalia-doc", // Usually your repo name.
+  url: "https://doc.animaliads.io/",
+  baseUrl: "/",
   themeConfig: {
     navbar: {
       logo: {
-        alt: 'Animalia DS Logo',
-        src: 'img/logo.svg',
-        srcDark: 'img/logo_dark.svg',
+        alt: "Animalia DS Logo",
+        src: "img/logo.svg",
+        srcDark: "img/logo_dark.svg",
       },
       items: [
+        {
+          type: "doc",
+          docId: "about/intro",
+          position: "right",
+          label: "Sobre",
+        },
+        {
+          type: "doc",
+          docId: "components/button",
+          position: "right",
+          label: "Componentes",
+        },
+        {
+          type: "doc",
+          docId: "foundation/intro",
+          position: "right",
+          label: "Fundamentos",
+        },
+        {
+          type: "doc",
+          docId: "designtokens/designtokens",
+          position: "right",
+          label: "Design Tokens",
+        },
+        {
+          type: "search",
+          position: "right",
+        },
 
-        {
-          type: 'doc',
-          docId: 'about/intro',
-          position: 'right',
-          label: 'Sobre',
-        },
-        {
-          type: 'doc',
-          docId: 'components/button',
-          position: 'right',
-          label: 'Componentes',
-        },
-        {
-          type: 'doc',
-          docId: 'foundation/intro',
-          position: 'right',
-          label: 'Fundamentos',
-        },
-        {
-          type: 'doc',
-          docId: 'designtokens/designtokens',
-          position: 'right',
-          label: 'Design Tokens',
-        },
-        {
-          type: 'search',
-          position: 'right',
-        },
-    
-       
-     
         //{to: '/blog', label: 'Blog', position: 'left'},
-        
-            // ... more items
-          ],
+
+        // ... more items
+      ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Começando',
+          title: "Começando",
           items: [
             {
-              label: 'Desenvolvimento',
-              to: '/docs/about/getting-started',
+              label: "Desenvolvimento",
+              to: "/docs/about/getting-started",
             },
             {
-              label: 'Design',
-              to: '/docs/about/getting-started-design',
+              label: "Design",
+              to: "/docs/about/getting-started-design",
             },
           ],
         },
         {
-          title: 'Links úteis',
+          title: "Links úteis",
           items: [
             {
-              label: 'Github',
-              href: 'https://github.com/animaliads',
+              label: "Github",
+              href: "https://github.com/animaliads",
             },
             {
-              label: 'Storybook (API)',
-              href: 'http://animaliads.io/?path=/docs/api-button--sample',
+              label: "Storybook (API)",
+              href: "http://animaliads.io/?path=/docs/api-button--sample",
             },
             {
-              label: 'Figma Community',
-              href: 'https://www.figma.com/@animaliads',
+              label: "Figma Community",
+              href: "https://www.figma.com/@animaliads",
             },
           ],
         },
         {
-          title: 'Outros',
+          title: "Outros",
           items: [
             {
-              label: 'Changelog',
-              to: '/docs/about/changelog',
+              label: "Changelog",
+              to: "/docs/about/changelog",
             },
-
           ],
         },
       ],
@@ -117,22 +113,22 @@ module.exports = {
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            "https://github.com/facebook/docusaurus/edit/master/website/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            "https://github.com/facebook/docusaurus/edit/master/website/blog/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],

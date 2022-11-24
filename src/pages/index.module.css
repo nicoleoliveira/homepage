@@ -6,11 +6,37 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+  padding: 10rem 1.5rem;
+  text-align: left;
   position: relative;
   overflow: hidden;
+  border-radius: 4px;
+  background-image: url('animalia_mascot.png');
+  background-size: cover;
+  background-color: var(--ifm-color-primary-dark);
+  color: var(--ifm-color-neutral-light-00);
 }
+.intro{
+  width: 35%;
+}
+.intro h1 {
+  font-size: 2.5rem;
+}
+
+@media screen and (max-width:61em){
+  .intro{
+    width: 70%;
+  }
+  .intro h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
+h1{
+  font-size: 2rem;
+}
+
 
 @media screen and (max-width: 966px) {
   .heroBanner {
@@ -20,6 +46,7 @@
 
 .buttons {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
 }
+

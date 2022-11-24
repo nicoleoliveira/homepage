@@ -1,141 +1,148 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Animalia DS',
-  tagline: 'Dinosaurs are cool',
-  onBrokenLinks: 'log',
+  title: "Animalia DS",
+  tagline: "Design System da TOTVS",
+  onBrokenLinks: "log",
   i18n: {
-    defaultLocale: 'pt',
-    locales: ['en', 'pt'],
+    defaultLocale: "pt",
+    locales: ["en", "pt"],
     localeConfigs: {
       en: {
-        label: 'English',
-        direction: 'ltr',
+        label: "English",
+        direction: "ltr",
       },
       pt: {
-        label: 'Português',
-        direction: 'ltr',
-      }
-    }
+        label: "Português",
+        direction: "ltr",
+      },
+    },
   },
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.png',
-  organizationName: 'nicoleoliveira', // Usually your GitHub org/user name.
-  projectName: 'homepage', // Usually your repo name.
-  url: 'https://nicoleoliveira.github.io.',
-  baseUrl: '/',
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.png",
+  organizationName: "animaliads", // Usually your GitHub org/user name.
+  projectName: "animalia-doc", // Usually your repo name.
+  url: "https://doc.animaliads.io/",
+  baseUrl: "/",
   themeConfig: {
+    hotjar:{
+      applicationId: 2903615,
+    },
     navbar: {
-      title: 'Animalia DS',
       logo: {
-        alt: 'Animalia DS Logo',
-        src: 'img/logo.png',
+        alt: "Animalia DS Logo",
+        src: "img/logo.svg",
+        srcDark: "img/logo_dark.svg",
       },
       items: [
         {
-          type: 'doc',
-          docId: 'intro',
-          position: 'left',
-          label: 'Documentation',
+          type: "doc",
+          docId: "about/intro",
+          position: "right",
+          label: "Sobre",
         },
         {
-          type: 'doc',
-          docId: 'components/button',
-          position: 'left',
-          label: 'Components',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/animaliads',
-          label: 'GitHub',
-          position: 'right',
+          type: "doc",
+          docId: "components/button",
+          position: "right",
+          label: "Componentes",
         },
         {
-          type: 'localeDropdown',
-          position: 'right',
+          type: "doc",
+          docId: "foundation/intro",
+          position: "right",
+          label: "Fundamentos",
         },
         {
-          label: 'Community',
-          position: 'right', // or 'right'
-          items: [
-            {
-              label: 'Facebook',
-              href: '...',
-            },
-            {
-              label: 'GitHub',
-              href: '...',
-            },
-            // ... more items
-          ],
+          type: "doc",
+          docId: "designtokens/designtokens",
+          position: "right",
+          label: "Design Tokens",
         },
+        {
+          type: "search",
+          position: "right",
+        },
+
+        //{to: '/blog', label: 'Blog', position: 'left'},
+
+        // ... more items
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Começando",
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: "Desenvolvimento",
+              to: "/docs/about/getting-started",
+            },
+            {
+              label: "Design",
+              to: "/docs/about/getting-started-design",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Links úteis",
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: "Github",
+              href: "https://github.com/animaliads",
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: "Storybook (API)",
+              href: "http://animaliads.io/?path=/docs/api-button--sample",
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: "Figma Community",
+              href: "https://www.figma.com/@animaliads",
             },
           ],
         },
         {
-          title: 'More',
+          title: "Outros",
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: "Changelog",
+              to: "/docs/about/changelog",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Animalia Design System 🦎.`,
     },
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+        googleAnalytics: {
+          trackingID: 'G-TCSRHFEBXF',
+          anonymizeIP: true,
+        },
+          docs: {
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            "https://github.com/facebook/docusaurus/edit/master/website/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            "https://github.com/facebook/docusaurus/edit/master/website/blog/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
+          
         },
       },
     ],
+  ],
+  plugins:[
+      'docusaurus-plugin-hotjar',
+     
   ],
 };
